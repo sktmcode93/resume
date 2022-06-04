@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 ul,
@@ -17,4 +19,11 @@ a {
 
 table {
   border-collapse: collapse;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }

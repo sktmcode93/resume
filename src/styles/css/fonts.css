@@ -7,3 +7,8 @@
     font-family: 'MaruBuriR';
     src: url('styles/fonts/MaruBuri-Regular.otf') format('opentype');
 }
+
+@font-face {
+    font-family: 'NexonGothicB';
+    src: url('styles/fonts/NEXON Lv2 Gothic Bold.woff') format('opentype');
+}
