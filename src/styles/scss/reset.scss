@@ -22,9 +22,13 @@ table {
     border-collapse: collapse;
 }
 
+input,
 button {
-    background-color: transparent;
     border: none;
     outline: none;
+}
+
+button {
+    background-color: transparent;
     cursor: pointer;
 }

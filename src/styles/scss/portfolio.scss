@@ -51,6 +51,67 @@
         width: 1280px;
         height: 720px;
         border: 1px solid black;
+    }
 
+    .d-day-control {
+        @include flex-style(row, space-between, center);
+        width: 100%;
+        height: 50px;
+        background-color: $blue50;
+
+        >.right {
+            >button {
+                font-size: 16px;
+                padding: 5px 10px;
+                margin-right: 10px;
+                background-color: $blue900;
+                color: white;
+                border-radius: 5px;
+
+                >svg {
+                    transform: translateY(2px);
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+    .add-d-day {
+        @include position-style(fixed, 50%, 50%);
+        @include flex-style(column, center, center);
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 300px;
+        background-color: $blue100;
+
+        >label {
+            @include flex-style();
+            width: 80%;
+            margin: 5px 0;
+            font-size: 18px;
+
+            >h5 {
+                width: 80px;
+            }
+
+            >input {
+                font-size: 18px;
+            }
+        }
+
+        >div {
+            margin-top: 15px;
+            width: 100%;
+            text-align: right;
+
+            >button {
+                margin-right: 25px;
+                font-size: 18px;
+                background-color: $blue900;
+                color: white;
+                padding: 5px 10px;
+            }
+
+        }
     }
 }
