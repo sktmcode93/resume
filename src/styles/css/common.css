@@ -1,0 +1,110 @@
+.App {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 1280px;
+  min-height: 720px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #212121;
+}
+
+.App > .summary-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 1280px;
+  height: 720px;
+  background-color: white;
+}
+
+.App > .summary-container > .side-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 280px;
+  height: 100%;
+  background-color: #F5F5F5;
+}
+
+.App > .summary-container > .side-bar > .img-box {
+  width: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 25px;
+}
+
+.App > .summary-container > .side-bar > .img-box > img {
+  width: 140px;
+}
+
+.App > .summary-container > .side-bar > .name-box {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.App > .summary-container > .side-bar > .name-box > h2 {
+  font-size: 18px;
+  font-family: "Pretendard";
+}
+
+.App > .summary-container > .side-bar > .nav-list {
+  margin-top: 40px;
+}
+
+.App > .summary-container > .side-bar > .nav-list > li {
+  margin: 15px 0;
+  position: relative;
+}
+
+.App > .summary-container > .side-bar > .nav-list > li > a {
+  width: 180px;
+  padding: 5px 0;
+  display: block;
+  text-align: center;
+  font-size: 24px;
+  font-family: "MaruBuriR";
+}
+
+.App > .summary-container > .side-bar > .nav-list > li::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  width: 100%;
+  border-bottom: 1px solid #212121;
+  display: none;
+}
+
+.App > .summary-container > .side-bar > .nav-list > li:hover::after {
+  display: block;
+}
+
+.App > .summary-container > section {
+  width: 1000px;
+  height: 100%;
+}

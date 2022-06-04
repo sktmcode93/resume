@@ -1,0 +1,1 @@
+export const docsList = ["html", "jsx", "js", "css", "scss"];

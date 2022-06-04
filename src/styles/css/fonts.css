@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('styles/fonts/Pretendard-Regular.woff') format('opentype');
+}
+
+@font-face {
+    font-family: 'MaruBuriR';
+    src: url('styles/fonts/MaruBuri-Regular.otf') format('opentype');
+}
