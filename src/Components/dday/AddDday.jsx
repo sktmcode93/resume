@@ -12,14 +12,12 @@ const AddDday = ({ addState, setAddState, setAddModal, setDayList }) => {
     useEffect(() => { window.addEventListener("click", outFn); }, []);
 
     const complete = () => {
-        console.log(addState.dday)
-        return;
         setDayList(prev => {
             const clone = [...prev];
             clone.push(addState);
+            localStorage.setItem("dday", JSON.stringify(clone));
             return clone;
         })
-
         window.removeEventListener("click", outFn);
         setAddModal(false);
         setAddState({ title: "", dday: "" })
