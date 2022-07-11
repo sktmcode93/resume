@@ -17,10 +17,11 @@
                 width: 30%;
                 margin: 0 1.5%;
                 border: 1px solid black;
+                border-radius: 8px;
 
                 >div {
                     width: 100%;
-                    height: 250px;
+                    height: 225px;
                     text-align: center;
                 }
 
@@ -32,7 +33,11 @@
                 >button {
                     width: 45%;
                     margin: 0 2.5%;
-
+                    padding: 5px 8px;
+                    background-color: $blue600;
+                    border-radius: 4px;
+                    color: white;
+                    margin-bottom: 15px;
                 }
             }
         }
@@ -46,11 +51,12 @@
     background-color: white;
     position: relative;
     overflow: hidden;
+    border-radius: 8px;
 
     >.container {
         width: 1280px;
         height: 720px;
-        border: 1px solid black;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
     }
 
     .d-day-control {
@@ -83,19 +89,26 @@
         width: 400px;
         height: 300px;
         background-color: $blue100;
+        border-radius: 8px;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 
         >label {
-            @include flex-style();
+            @include flex-style($alignVal : center);
             width: 80%;
             margin: 5px 0;
             font-size: 18px;
 
             >h5 {
                 width: 80px;
+                font-size: 16px;
+                font-family: $font3;
             }
 
             >input {
-                font-size: 18px;
+                font-size: 16px;
+                background-color: transparent;
+                border-bottom: 1px solid black;
+                font-family: $font1;
             }
         }
 
@@ -115,6 +128,7 @@
         }
     }
 
+    // 디데이 리스트
     .d-day-list {
         @include flex-style();
         flex-wrap: wrap;
@@ -126,14 +140,41 @@
             background-color: $red50;
             margin: 15px;
 
-
-            >h5 {
-                text-align: center;
+            >h3 {
+                padding-left: 20px;
                 font-size: 16px;
                 height: 40px;
                 line-height: 40px;
                 font-family: $font2;
                 letter-spacing: 3px;
+            }
+
+            >h4 {
+                padding-left: 20px;
+                font-size: 16px;
+                font-family: $font2;
+            }
+
+            >ol.times {
+                margin-top: 20px;
+                @include flex-style($justifyVal : center);
+
+                >li {
+                    @include flex-style($alignVal : flex-end);
+
+                    text-align: center;
+                    margin: 0 5px;
+
+                    >h5 {
+                        font-size: 15px;
+                        font-weight: normal;
+                        font-family: $font1;
+                    }
+
+                    >p {
+                        font-size: 12px;
+                    }
+                }
             }
 
             &::before {
