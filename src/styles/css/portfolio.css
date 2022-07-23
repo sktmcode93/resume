@@ -61,7 +61,7 @@
   margin-bottom: 15px;
 }
 
-.d-day {
+#d-day {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -75,22 +75,17 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  position: relative;
-  overflow: hidden;
   border-radius: 8px;
 }
 
-.d-day > .container {
+#d-day > .container {
   width: 1280px;
   height: 720px;
   -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 
-.d-day .d-day-control {
+#d-day .d-day-control {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -109,7 +104,7 @@
   background-color: #E3F2FD;
 }
 
-.d-day .d-day-control > .right > button {
+#d-day .d-day-control > .right > button {
   font-size: 16px;
   padding: 5px 10px;
   margin-right: 10px;
@@ -118,13 +113,13 @@
   border-radius: 5px;
 }
 
-.d-day .d-day-control > .right > button > svg {
+#d-day .d-day-control > .right > button > svg {
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
   margin-right: 5px;
 }
 
-.d-day .add-d-day {
+#d-day .add-d-day {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -151,7 +146,7 @@
           box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 
-.d-day .add-d-day > label {
+#d-day .add-d-day > label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -167,26 +162,26 @@
   font-size: 18px;
 }
 
-.d-day .add-d-day > label > h5 {
+#d-day .add-d-day > label > h5 {
   width: 80px;
   font-size: 16px;
   font-family: "NexonGothicB";
 }
 
-.d-day .add-d-day > label > input {
+#d-day .add-d-day > label > input {
   font-size: 16px;
   background-color: transparent;
   border-bottom: 1px solid black;
   font-family: "Pretendard";
 }
 
-.d-day .add-d-day > div {
+#d-day .add-d-day > div {
   margin-top: 15px;
   width: 100%;
   text-align: right;
 }
 
-.d-day .add-d-day > div > button {
+#d-day .add-d-day > div > button {
   margin-right: 25px;
   font-size: 18px;
   background-color: #0D47A1;
@@ -194,7 +189,7 @@
   padding: 5px 10px;
 }
 
-.d-day .d-day-list {
+#d-day .d-day-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -206,7 +201,7 @@
       flex-wrap: wrap;
 }
 
-.d-day .d-day-list > li {
+#d-day .d-day-list > li {
   position: relative;
   width: 150px;
   height: 150px;
@@ -214,22 +209,26 @@
   margin: 15px;
 }
 
-.d-day .d-day-list > li > h3 {
+#d-day .d-day-list > li > h3 {
   padding-left: 20px;
+  background-color: #EF9A9A;
   font-size: 16px;
-  height: 40px;
-  line-height: 40px;
+  color: white;
+  height: 30px;
+  line-height: 30px;
   font-family: "MaruBuriR";
   letter-spacing: 3px;
+  font-weight: normal;
 }
 
-.d-day .d-day-list > li > h4 {
+#d-day .d-day-list > li > h4 {
+  margin-top: 12px;
   padding-left: 20px;
   font-size: 16px;
   font-family: "MaruBuriR";
 }
 
-.d-day .d-day-list > li > ol.times {
+#d-day .d-day-list > li > ol.times {
   margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -243,7 +242,7 @@
           justify-content: center;
 }
 
-.d-day .d-day-list > li > ol.times > li {
+#d-day .d-day-list > li > ol.times > li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -258,17 +257,17 @@
   margin: 0 5px;
 }
 
-.d-day .d-day-list > li > ol.times > li > h5 {
+#d-day .d-day-list > li > ol.times > li > h5 {
   font-size: 15px;
   font-weight: normal;
   font-family: "Pretendard";
 }
 
-.d-day .d-day-list > li > ol.times > li > p {
+#d-day .d-day-list > li > ol.times > li > p {
   font-size: 12px;
 }
 
-.d-day .d-day-list > li::before {
+#d-day .d-day-list > li::before {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -276,4 +275,24 @@
   width: 20px;
   height: 20px;
   background: linear-gradient(315deg, #FFFFFF 0%, #FFFFFF 40%, #EF9A9A 100%);
+}
+
+#todo-list > aside {
+  width: 320px;
+  height: 100%;
+  background-color: #EEEEEE;
+  border-right: 1px solid #424242;
+}
+
+#todo-list > aside > h2 {
+  background-color: #424242;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  letter-spacing: 3px;
+  font-family: "MaruBuriR";
+}
+
+#todo-list > section {
+  width: calc(100% - 320px);
 }

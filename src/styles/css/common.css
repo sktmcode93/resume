@@ -235,3 +235,13 @@
 .site-map > ul > li:hover > p {
   right: 40px;
 }
+
+.App > main {
+  min-width: 1280px;
+  min-height: 720px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+}
