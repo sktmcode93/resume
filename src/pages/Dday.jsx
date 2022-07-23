@@ -1,7 +1,7 @@
 import { memo, useEffect, useState } from "react";
 
 import SiteMap from 'Components/SiteMap';
-import AddDday from "./AddDday";
+import AddDday from "../Components/dday/Modal__AddDday";
 
 import { clearDDay, findLeftTimes } from "js/dday";
 import { FaCalendarPlus } from 'react-icons/fa';
@@ -23,7 +23,7 @@ const Dday = () => {
         return () => { clearInterval(timer) };
     }, [])
 
-    return <section className="d-day">
+    return <main id="d-day">
         <div className="container">
             <aside className="d-day-control">
                 <div className="left"></div>
@@ -50,7 +50,7 @@ const Dday = () => {
         </div>
         <SiteMap />
         {addModal && <AddDday {...addProps} />}
-    </section>
+    </main>
 }
 
 export default memo(Dday);

@@ -1,7 +1,7 @@
 import { memo } from "react";
-import DocsCounts from "./home/DocsCounts";
+import DocsCounts from "../Components/home/DocsCounts";
 
-import SideBar from "./SideBar";
+import SideBar from "../Components/SideBar";
 
 const Home = () => {
     const calWorkDays = () => {
