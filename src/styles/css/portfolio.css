@@ -293,6 +293,47 @@
   font-family: "MaruBuriR";
 }
 
+#todo-list > aside > ul {
+  width: 100%;
+  margin-top: 24px;
+  padding: 0 24px;
+}
+
+#todo-list > aside > ul > li {
+  width: 100%;
+}
+
+#todo-list > aside > ul > li > h4 {
+  font-size: 22px;
+  font-family: "NexonGothicB";
+  margin-bottom: 10px;
+}
+
+#todo-list > aside > ul > li > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#todo-list > aside > ul > li > div > select {
+  width: 120px;
+  font-size: 16px;
+}
+
+#todo-list > aside > ul > li > div > button {
+  border-radius: 4px;
+  border: 1px solid #424242;
+  padding: 0 8px;
+  font-size: 16px;
+}
+
 #todo-list > section {
   width: calc(100% - 320px);
 }
