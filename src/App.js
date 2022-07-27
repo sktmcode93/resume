@@ -5,6 +5,7 @@ import Skills from "pages/Skills";
 import Portfolio from "pages/Portfolio";
 import Dday from "pages/Dday";
 import TodoList from "pages/TodoList";
+import MovieBank from "pages/MovieBank";
 import NotFound from 'pages/NotFound';
 
 import 'styles/css/main.css';
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/d-day-counter" element={<Dday />} />
         <Route path="/todo-list" element={<TodoList />} />
+        <Route path="/movie-bank" element={<MovieBank />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </div>
