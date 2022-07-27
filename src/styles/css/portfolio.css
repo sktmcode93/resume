@@ -337,3 +337,19 @@
 #todo-list > section {
   width: calc(100% - 320px);
 }
+
+#movie-bank > .movie-side {
+  width: 300px;
+  height: 100vh;
+  background-color: #F5F5F5;
+}
+
+#movie-bank > .movie-side > h2 {
+  font-family: "SebangGothic";
+  font-size: 28px;
+  text-align: center;
+  padding: 28px 0;
+  background-color: #424242;
+  color: white;
+  letter-spacing: 3px;
+}

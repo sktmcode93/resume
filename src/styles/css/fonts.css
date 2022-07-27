@@ -12,3 +12,8 @@
     font-family: 'NexonGothicB';
     src: url('styles/fonts/NEXON Lv2 Gothic Bold.woff') format('opentype');
 }
+
+@font-face {
+    font-family: 'SebangGothic';
+    src: url('styles/fonts/SEBANG Gothic.ttf') format('opentype');
+}

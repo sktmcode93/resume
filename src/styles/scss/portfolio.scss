@@ -240,3 +240,21 @@
         width: calc(100% - 320px);
     }
 }
+
+#movie-bank {
+    >.movie-side {
+        width: 300px;
+        height: 100vh;
+        background-color: $gray100;
+
+        >h2 {
+            font-family: $font4;
+            font-size: 28px;
+            text-align: center;
+            padding: 28px 0;
+            background-color: $gray800;
+            color: white;
+            letter-spacing: 3px;
+        }
+    }
+}
