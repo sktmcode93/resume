@@ -242,6 +242,8 @@
 }
 
 #movie-bank {
+    @include flex-style();
+
     >.movie-side {
         width: 300px;
         height: 100vh;
@@ -255,6 +257,25 @@
             background-color: $gray800;
             color: white;
             letter-spacing: 3px;
+        }
+    }
+
+    >.right {
+        width: calc(100% - 300px);
+        @include flex-style(column, flex-start, center);
+
+        >.movie-search {
+            width: 80%;
+            @include flex-style($justifyVal : space-between);
+
+            >div {
+                >input {}
+            }
+
+            >ul {
+
+                @include flex-style();
+            }
         }
     }
 }

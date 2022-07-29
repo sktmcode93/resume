@@ -1,7 +1,7 @@
 import { memo, useEffect, useState } from "react";
 
 import SiteMap from 'Components/SiteMap';
-import AddDday from "../Components/dday/ModalAddDday";
+import AddDday from "../Components/dday/Modal__AddDday";
 
 import { clearDDay, findLeftTimes } from "js/dday";
 import { FaCalendarPlus } from 'react-icons/fa';
