@@ -1,8 +1,12 @@
-import { api__getMovieByQueryTerm } from "js/serviceApi";
 import { memo, useRef, useState } from "react";
 
-import { FaSearch } from "react-icons/fa";
 import ModalPreviewList from "./Modal__PreviewList";
+
+import { moive_sort_list } from "js/array";
+import { changeObjVal } from "js/common";
+import { api__getMovieByQueryTerm } from "js/serviceApi";
+import { FaSearch } from "react-icons/fa";
+
 
 const MovieSearch = ({ setMovieData, pageInfo, setPageInfo }) => {
     const typing = useRef();
@@ -11,11 +15,8 @@ const MovieSearch = ({ setMovieData, pageInfo, setPageInfo }) => {
     const [finding, setFinding] = useState(false);
     const [previewList, setPreviewList] = useState([]);
 
-    const changeSortBy = t => {
-        console.log(t);
-    }
-
-    const matchingData = e => {
+    // API_EVENT : 사전검색어에 일치하는 프리뷰 데이터를 찾아주는 함수
+    const findPreviewData = async e => {
         clearTimeout(typing.current);
         const { value } = e.target;
         setFinding(true);
@@ -31,26 +32,37 @@ const MovieSearch = ({ setMovieData, pageInfo, setPageInfo }) => {
     }
 
     const searchMovieData = async () => {
+        // try{
 
+        // }
     }
 
     const previewProps = { finding, previewList, setActiveInput };
+
+    const { sorted_by, viewCount } = pageInfo;
     return <section className="movie-search">
-        <div>
-            <input type="text" value={search} onChange={matchingData} onFocus={() => setActiveInput(true)} />
+        <article className="search">
+            <input type="text" value={search} onChange={findPreviewData} onFocus={() => setActiveInput(true)} className="search-input" />
             <button onClick={searchMovieData}><FaSearch /></button>
             {activeInput && search && <ModalPreviewList {...previewProps} />}
-        </div>
-        <ul>
-            <li onClick={() => changeSortBy("year")}>최신순</li>
-            <li onClick={() => changeSortBy("rating")}>평점순</li>
-            <li onClick={() => changeSortBy("download_count")}>다운로드순</li>
-        </ul>
-        {/* <select value={viewCount} onChange={e => setViewCount(e.target.value)}>
-            <option value={20}>20개씩 보기</option>
-            <option value={30}>30개씩 보기</option>
-            <option value={50}>50개씩 보기</option>
-        </select> */}
+        </article>
+        <article className="option">
+            <ul>
+                {moive_sort_list.map(({ value, title }, idx) => (
+                    <li
+                        className={value === sorted_by ? "active" : ""}
+                        onClick={() => { changeObjVal("sorted_by", value, setPageInfo); }}
+                        key={`movie_sort_${idx}`}
+                    >{title}
+                    </li>
+                ))}
+            </ul>
+            <select value={viewCount} onChange={e => { changeObjVal("viewCount", e.target.value, setPageInfo) }}>
+                <option value={20}>20개씩 보기</option>
+                <option value={30}>30개씩 보기</option>
+                <option value={50}>50개씩 보기</option>
+            </select>
+        </article>
     </section>
 }
 
