@@ -15,6 +15,14 @@
     z-index: $zIndex;
 }
 
+//제목 말줄임표 처리
+@mixin cutContext {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
 //---------------컬러 변수 정리---------------
 $blue50 : #E3F2FD;
 $blue100 : #BBDEFB;

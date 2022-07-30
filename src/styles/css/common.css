@@ -245,3 +245,12 @@
   position: relative;
   overflow: hidden;
 }
+
+.scroll-design1::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scroll-design1::-webkit-scrollbar-thumb {
+  background-color: #BDBDBD;
+  border-radius: 10px;
+}

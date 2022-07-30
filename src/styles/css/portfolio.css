@@ -379,6 +379,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 72px;
 }
 
 #movie-bank > .right > .movie-search {
@@ -395,7 +396,7 @@
           justify-content: space-between;
 }
 
-#movie-bank > .right > .movie-search > ul {
+#movie-bank > .right > .movie-search > article {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -403,4 +404,320 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#movie-bank > .right > .movie-search > .search {
+  position: relative;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  padding: 8px 12px;
+}
+
+#movie-bank > .right > .movie-search > .search > input {
+  width: 240px;
+  font-size: 24px;
+}
+
+#movie-bank > .right > .movie-search > .search > button {
+  font-size: 24px;
+}
+
+#movie-bank > .right > .movie-search > .search > button > svg {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+#movie-bank > .right > .movie-search > .search > .search-preview {
+  position: absolute;
+  left: 0;
+  top: 55px;
+  z-index: 2;
+  width: 330px;
+  height: 300px;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+#movie-bank > .right > .movie-search > .search > .search-preview > div {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#movie-bank > .right > .movie-search > .search > .search-preview > div > img {
+  width: 150px;
+}
+
+#movie-bank > .right > .movie-search > .search > .search-preview .stand {
+  position: relative;
+}
+
+#movie-bank > .right > .movie-search > .search > .search-preview .stand .preview-list {
+  background-color: white;
+  width: 330px;
+  height: 300px;
+  overflow: auto;
+}
+
+#movie-bank > .right > .movie-search > .search > .search-preview .stand .preview-list > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+#movie-bank > .right > .movie-search > .search > .search-preview .stand .preview-list > li > .thumbnail {
+  width: 40px;
+}
+
+#movie-bank > .right > .movie-search > .search > .search-preview .stand .preview-list > li > .thumbnail > img {
+  width: 100%;
+}
+
+#movie-bank > .right > .movie-search > .search > .search-preview .stand .preview-list > li > aside {
+  margin-left: 15px;
+}
+
+#movie-bank > .right > .movie-search > .search > .search-preview .stand .preview-list > li > .hover-img {
+  position: absolute;
+  left: 340px;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  width: 200px;
+  height: 280px;
+  padding: 10px;
+  display: none;
+}
+
+#movie-bank > .right > .movie-search > .search > .search-preview .stand .preview-list > li > .hover-img > img {
+  width: 180px;
+}
+
+#movie-bank > .right > .movie-search > .search > .search-preview .stand .preview-list > li:hover {
+  background-color: #E3F2FD;
+}
+
+#movie-bank > .right > .movie-search > .search > .search-preview .stand .preview-list > li:hover > .hover-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#movie-bank > .right > .movie-search > .search > .search-preview .stand .preview-list::-webkit-scrollbar {
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+#movie-bank > .right > .movie-search > .search > .search-preview .stand .preview-list::-webkit-scrollbar-thumb {
+  background-color: #424242;
+  border-radius: 8px;
+}
+
+#movie-bank > .right > .movie-search > .option > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#movie-bank > .right > .movie-search > .option > ul > li {
+  padding: 4px 0;
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+#movie-bank > .right > .movie-search > .option > ul > li.active {
+  color: #2196F3;
+  border-bottom: 1px solid #2196F3;
+}
+
+#movie-bank > .right > .movie-search > .option > select {
+  width: 160px;
+  margin-left: 24px;
+  font-size: 16px;
+  padding: 4px 8px;
+}
+
+#movie-bank > .right > .movie-list {
+  width: 80%;
+  margin-top: 36px;
+  height: calc(100vh - 224px);
+  overflow: auto;
+}
+
+#movie-bank > .right > .movie-list::-webkit-scrollbar-thumb {
+  background-color: #424242;
+}
+
+#movie-bank > .right > .movie-list > ul {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 2%;
+}
+
+#movie-bank > .right > .movie-list > ul > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 45%;
+  height: 300px;
+  margin-right: 5%;
+  margin-bottom: 24px;
+  background-color: #FFEBEE;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+
+#movie-bank > .right > .movie-list > ul > li:nth-child(2n) {
+  margin-right: 0;
+}
+
+#movie-bank > .right > .movie-list > ul > li > div {
+  width: 30%;
+  margin-left: 2%;
+  cursor: pointer;
+}
+
+#movie-bank > .right > .movie-list > ul > li > div > img {
+  width: 100%;
+}
+
+#movie-bank > .right > .movie-list > ul > li > aside {
+  display: block;
+  width: 68%;
+  padding: 15px;
+}
+
+#movie-bank > .right > .movie-list > ul > li > aside > h4 {
+  font-family: "MaruBuriR";
+  font-size: 18px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+#movie-bank > .right > .movie-list > ul > li > aside > span {
+  font-family: "MaruBuriR";
+  display: block;
+  text-align: right;
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+#movie-bank > .right > .movie-list > ul > li > aside > p {
+  overflow: auto;
+  height: 200px;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+#movie-bank > .right > .movie-list > ul > li > aside > ol {
+  width: 100%;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Pretendard";
+  font-size: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+#movie-bank > .right > .movie-list > ul > li > aside > ol > li {
+  margin-right: 5px;
+  font-style: italic;
+}
+
+#movie-bank .movie-detail {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#movie-bank .prevent {
+  display: none;
 }
