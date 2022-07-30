@@ -8,6 +8,7 @@ const MovieBank = () => {
         <div className="right">
             <MovieSection />
         </div>
+        <div className='prevent'></div>
         <SiteMap />
     </main>
 }
