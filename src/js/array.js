@@ -6,3 +6,9 @@ export const errorList = {
     todo_duple: "이미 존재하는 값입니다.",
     todo_delete_standard: "기본 항목은 제거 할 수 없습니다."
 }
+
+export const moive_sort_list = [
+    { value: "year", title: "최신순" },
+    { value: "rating", title: "평점순" },
+    { value: "download_count", title: "다운로드순" }
+]
