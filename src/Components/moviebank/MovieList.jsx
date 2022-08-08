@@ -30,7 +30,7 @@ const MovieList = ({ movieData }) => {
                     <aside>
                         <h4 title={title_long}>{title_long}</h4>
                         <span>Rating : {rating}</span>
-                        <p className='scroll-design1'>{synopsis}</p>
+                        <p className='scroll-design1'>{synopsis || "NO INFO"}</p>
                         <ol><li>Genres : </li>{genres.map((g, idx) => <li key={`movie_genres_${id}_${idx}`}>{g}</li>)}</ol>
                     </aside>
                 </li>

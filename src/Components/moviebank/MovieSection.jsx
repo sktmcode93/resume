@@ -1,3 +1,4 @@
+import { checkCache } from "js/moviebank";
 import { api__getMovieList } from "js/serviceApi";
 import { memo, useState, useEffect } from "react";
 import MovieList from "./MovieList";
@@ -6,7 +7,6 @@ import MovieSearch from "./MovieSearch";
 
 const MoiveSection = () => {
     let prevent = false;
-
     const [movieData, setMovieData] = useState([]);
     const [pageInfo, setPageInfo] = useState({
         page: 1,
@@ -14,13 +14,24 @@ const MoiveSection = () => {
         sorted_by: "year",
         viewCount: 20
     })
+    const [searchCache, setSearchCache] = useState([]);
 
     // API_EVENT : 각 조건에 해당하는 영화 리스트를 불러와주는 함수
     const getMovieList = async init => {
+        const data = checkCache(searchCache, pageInfo);
+        if (data) {
+            setMovieData(data.listData);
+            setSearchCache(prev => {
+                const clone = [...prev];
+                const save = clone.splice(data.index, 1)[0];
+                clone.push(save);
+                return clone;
+            })
+            return;
+        }
         if (prevent) return;
         prevent = true;
         setTimeout(() => { prevent = false; }, 200);
-
         try {
             const { sorted_by, page, viewCount } = pageInfo;
             const result = await api__getMovieList(sorted_by, init || page, viewCount);
@@ -29,6 +40,12 @@ const MoiveSection = () => {
                 const clone = { ...prev };
                 clone.totalCount = movie_count;
                 clone.page = init || page;
+                return clone;
+            })
+            setSearchCache(prev => {
+                const clone = [...prev];
+                clone.push({ condition: { page, viewCount, sorted_by }, listData: movies });
+                if (clone.length === 10) clone.shift();
                 return clone;
             })
             setMovieData(movies);
