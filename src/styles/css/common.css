@@ -254,3 +254,62 @@
   background-color: #BDBDBD;
   border-radius: 10px;
 }
+
+.modal-type1 {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 5;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.modal-type1 > header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #424242;
+  padding: 8px 12px;
+}
+
+.modal-type1 > header > h3 {
+  color: white;
+  margin-left: 12px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.modal-type1 > header > h3 > i {
+  color: white;
+}
+
+.modal-type1 > header > button {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  background-image: linear-gradient(200deg, #ffffff 0%, #ff2525 28%);
+}
+
+.btn-type1 {
+  padding: 8px 12px;
+  background-color: #2196F3;
+  color: white;
+  font-size: 18px;
+  border-radius: 8px;
+}

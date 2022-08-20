@@ -78,48 +78,38 @@
     }
 
     .add-d-day {
-        @include position-style(fixed, 50%, 50%);
-        @include flex-style(column, center, center);
-        transform: translate(-50%, -50%);
         width: 400px;
-        height: 300px;
-        background-color: $blue100;
-        border-radius: 8px;
-        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+        background-color: white;
 
-        >label {
-            @include flex-style($alignVal : center);
-            width: 80%;
-            margin: 5px 0;
-            font-size: 18px;
+        >article {
+            padding: 25px 40px;
 
-            >h5 {
-                width: 80px;
-                font-size: 16px;
-                font-family: $font3;
-            }
-
-            >input {
-                font-size: 16px;
-                background-color: transparent;
-                border-bottom: 1px solid black;
-                font-family: $font1;
-            }
-        }
-
-        >div {
-            margin-top: 15px;
-            width: 100%;
-            text-align: right;
-
-            >button {
-                margin-right: 25px;
+            >label {
+                @include flex-style($alignVal : center);
+                margin-bottom: 18px;
                 font-size: 18px;
-                background-color: $blue900;
-                color: white;
-                padding: 5px 10px;
+
+                >h5 {
+                    width: 80px;
+                    font-size: 16px;
+                    font-family: $font3;
+                }
+
+                >input {
+                    width: 240px;
+                    font-size: 16px;
+                    background-color: transparent;
+                    border-bottom: .5px solid black;
+                    font-family: $font1;
+                    padding-left: 8px;
+                }
             }
 
+            >div {
+                width: 100%;
+                margin-top: 18px;
+                text-align: right;
+            }
         }
     }
 
@@ -135,21 +125,31 @@
             background-color: $red50;
             margin: 15px;
 
-            >h3 {
-                padding-left: 20px;
+            >.top {
+                @include flex-style(row, space-between, center);
                 background-color: $red200;
-                font-size: 16px;
-                color: white;
-                height: 30px;
-                line-height: 30px;
-                font-family: $font2;
-                letter-spacing: 3px;
-                font-weight: normal;
+                padding: 0 10px 0 15px;
+
+                >h3 {
+                    font-size: 16px;
+                    color: white;
+                    height: 30px;
+                    line-height: 30px;
+                    font-family: $font2;
+                    letter-spacing: 3px;
+                    font-weight: normal;
+                }
+
+                >button {
+                    font-family: $font3;
+                    padding: 0 5px;
+                    height: 30px;
+                }
             }
 
             >h4 {
                 margin-top: 12px;
-                padding-left: 20px;
+                text-align: center;
                 font-size: 16px;
                 font-family: $font2;
             }
