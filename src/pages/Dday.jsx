@@ -1,16 +1,17 @@
 import { memo, useEffect, useState } from "react";
 
-import SiteMap from 'Components/SiteMap';
+import MainLayout from "layout/MainLayout";
 import AddDday from "../Components/dday/Modal__AddDday";
 
 import { clearDDay, findLeftTimes } from "js/dday";
 import { FaCalendarPlus } from 'react-icons/fa';
+import { changeObjVal } from "js/common";
 
 const Dday = () => {
     const [nowTime, setNowTime] = useState(new Date());
     const [dayList, setDayList] = useState([]);
     const [addModal, setAddModal] = useState(false);
-    const [addState, setAddState] = useState({ title: "", dday: "" })
+    const [addState, setAddState] = useState({ title: "", dday: "", id: 0 })
 
     const addProps = { addState, setAddState, setAddModal, setDayList };
 
@@ -18,13 +19,26 @@ const Dday = () => {
     // Mount_Fn : 현재 있는 파일들에 대해 초시계가 움직일 수 있도록 setInterval 설정
     useEffect(() => {
         const items = localStorage.getItem("dday");
-        if (items) setDayList(JSON.parse(items));
+        if (items) {
+            const list = JSON.parse(items);
+            setDayList(list);
+            changeObjVal("id", Number(list[list.length - 1].id) + 1, setAddState);
+        }
         const timer = setInterval(() => { setNowTime(new Date()); }, 1000);
         return () => { clearInterval(timer) };
     }, [])
-
-    return <main id="d-day">
-        <div className="container">
+    const delDay = id => {
+        const idx = dayList.findIndex(day => day.id === id);
+        if (!window.confirm(`[${dayList[idx].title}]을(를) 지우시겠습니까?`)) return;
+        setDayList(prev => {
+            const clone = [...prev];
+            clone.splice(idx, 1);
+            localStorage.setItem("dday", JSON.stringify(clone));
+            return clone;
+        })
+    }
+    return (
+        <MainLayout id="d-day">
             <aside className="d-day-control">
                 <div className="left"></div>
                 <div className="right">
@@ -33,10 +47,13 @@ const Dday = () => {
                 </div>
             </aside>
             <ul className="d-day-list">
-                {dayList.map(({ title, dday }, idx) => {
+                {dayList.map(({ title, dday, id }, idx) => {
                     const lefts = findLeftTimes(dday, nowTime);
                     return <li key={`d_day_${idx}`}>
-                        <h3>{title}</h3>
+                        <div className="top">
+                            <h3>{title}</h3>
+                            <button onClick={() => { delDay(id) }}>X</button>
+                        </div>
                         <h4>{dday}</h4>
                         <ol className="times">
                             {Object.keys(lefts).map(k => <li key={`d_day_${idx}_${k}`}>
@@ -47,10 +64,9 @@ const Dday = () => {
                     </li>
                 })}
             </ul>
-        </div>
-        <SiteMap />
-        {addModal && <AddDday {...addProps} />}
-    </main>
+            {addModal && <AddDday {...addProps} />}
+        </MainLayout>
+    )
 }
 
 export default memo(Dday);
