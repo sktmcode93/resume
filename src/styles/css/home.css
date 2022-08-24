@@ -1,4 +1,8 @@
-.home {
+.p-main {
+  width: 100vw;
+  height: 100vh;
+  min-width: 1280px;
+  min-height: 720px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6,12 +10,76 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+}
+
+.p-main > .side-bar {
+  width: 20%;
+  min-width: 256px;
+  height: 100%;
+  background-color: #FFD600;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+
+.p-main > .side-bar > .img-box {
+  margin-top: 5%;
+  text-align: center;
+  height: 20%;
+}
+
+.p-main > .side-bar > .img-box > img {
+  height: 100%;
+}
+
+.p-main > .side-bar > .name-box {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.p-main > .side-bar > .name-box > h2 {
+  font-size: 18px;
+  font-family: "Pretendard";
+}
+
+.p-main > .side-bar > .nav-list {
+  margin-top: 40px;
+}
+
+.p-main > .side-bar > .nav-list > li {
+  margin: 15px 0;
+  position: relative;
+}
+
+.p-main > .side-bar > .nav-list > li > a {
+  width: 180px;
+  padding: 5px 0;
+  display: block;
+  text-align: center;
+  font-size: 24px;
+  font-family: "MaruBuriR";
+}
+
+.p-main > .side-bar > .nav-list > li::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  width: 100%;
+  border-bottom: 1px solid #212121;
+  display: none;
+}
+
+.p-main > .side-bar > .nav-list > li:hover::after {
+  display: block;
+}
+
+.p-main > .side-bar > .nav-list > li.active > a {
+  color: #1565C0;
+}
+
+.p-main > .side-bar > .nav-list > li.active::after {
+  display: block;
+  border-color: #1565C0;
 }
 
 .home > main {

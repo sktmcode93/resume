@@ -6,9 +6,10 @@ import myImg from 'images/김성엽.jpg';
 
 const SideBar = () => {
     const { pathname } = useLocation();
+
     return <aside className="side-bar">
         <div className="img-box">
-            {/* <img src={myImg} alt="증명사진" /> */}
+            <img src={myImg} alt="증명사진" />
         </div>
         <div className="name-box">
             <h1>김성엽</h1>

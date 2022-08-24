@@ -14,75 +14,7 @@
         height: 720px;
         background-color: white;
 
-        >.side-bar {
-            @include flex-style(column, flex-start, center);
-            width: 280px;
-            height: 100%;
-            background-color: $gray100;
 
-            >.img-box {
-                width: 140px;
-                border-radius: 50%;
-                overflow: hidden;
-                margin-top: 25px;
-
-                >img {
-                    width: 140px;
-                }
-            }
-
-            >.name-box {
-                margin-top: 25px;
-                text-align: center;
-
-                >h2 {
-                    font-size: 18px;
-                    font-family: $font1;
-                }
-            }
-
-            >.nav-list {
-                margin-top: 40px;
-
-                >li {
-                    margin: 15px 0;
-                    position: relative;
-
-                    >a {
-                        width: 180px;
-                        padding: 5px 0;
-                        display: block;
-                        text-align: center;
-                        font-size: 24px;
-                        font-family: $font2;
-                    }
-
-                    &::after {
-                        @include position-style($left :0, $bottom : 0);
-                        content: "";
-                        width: 100%;
-                        border-bottom: 1px solid $gray900;
-                        display: none;
-                    }
-
-                    &:hover::after {
-                        display: block;
-                    }
-
-                    &.active {
-                        >a {
-                            color: $blue800;
-                        }
-
-                        &::after {
-                            display: block;
-                            border-color: $blue800;
-                        }
-
-                    }
-                }
-            }
-        }
 
         >section {
             width: 1000px;

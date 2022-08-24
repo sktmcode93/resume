@@ -1,7 +1,84 @@
 @import './styles';
 
+.p-main {
+    width: 100vw;
+    height: 100vh;
+    min-width: 1280px;
+    min-height: 720px;
+    @include flex-style(row);
+
+    >.side-bar {
+        width: 20%;
+        min-width: 256px;
+        height: 100%;
+        background-color: $yellowA700;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+
+        >.img-box {
+            margin-top: 5%;
+            text-align: center;
+            height: 20%;
+
+            >img {
+                height: 100%;
+            }
+        }
+
+        >.name-box {
+            margin-top: 25px;
+            text-align: center;
+
+            >h2 {
+                font-size: 18px;
+                font-family: $font1;
+            }
+        }
+
+        >.nav-list {
+            margin-top: 40px;
+
+            >li {
+                margin: 15px 0;
+                position: relative;
+
+                >a {
+                    width: 180px;
+                    padding: 5px 0;
+                    display: block;
+                    text-align: center;
+                    font-size: 24px;
+                    font-family: $font2;
+                }
+
+                &::after {
+                    @include position-style($left :0, $bottom : 0);
+                    content: "";
+                    width: 100%;
+                    border-bottom: 1px solid $gray900;
+                    display: none;
+                }
+
+                &:hover::after {
+                    display: block;
+                }
+
+                &.active {
+                    >a {
+                        color: $blue800;
+                    }
+
+                    &::after {
+                        display: block;
+                        border-color: $blue800;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
 .home {
-    @include flex-style(row, center, center);
 
     >main {
         width: 80%;
