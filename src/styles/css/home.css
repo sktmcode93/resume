@@ -55,7 +55,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   position: relative;
 }
 
@@ -99,6 +99,7 @@
   border-radius: 70px 0 0 70px;
   padding: 60px 70px;
   background-color: white;
+  overflow: auto;
 }
 
 .home > div {
@@ -185,8 +186,6 @@
 }
 
 .skills .develope > ul {
-  width: 80%;
-  min-width: 720px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -194,11 +193,40 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  width: 90%;
+  min-width: 720px;
+  overflow: auto;
+}
+
+.skills .develope > ul::-webkit-scrollbar {
+  width: 10px;
+}
+
+.skills .develope > ul::-webkit-scrollbar-thumb {
+  background-color: #61573C;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+
+.skills .develope > ul::-webkit-scrollbar-track {
+  background-color: #B3A88A;
+  border-radius: 10px;
 }
 
 .skills .develope > ul > li {
-  width: 15%;
-  margin: 0 4.16%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20%;
+  margin-right: 2.5%;
   position: relative;
 }
 
