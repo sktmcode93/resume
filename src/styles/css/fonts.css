@@ -15,5 +15,40 @@
 
 @font-face {
     font-family: 'SebangGothic';
-    src: url('styles/fonts/SEBANG Gothic.ttf') format('opentype');
+    src: url('styles/fonts/SEBANG Gothic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ChosunNm';
+    src: url('styles/fonts/ChosunNm.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "NotoSansBlack";
+    src: url("styles/fonts/NotoSansKR-Black.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "NotoSansBold";
+    src: url("styles/fonts/NotoSansKR-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "NotoSansLight";
+    src: url("styles/fonts/NotoSansKR-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "NotoSansMedium";
+    src: url("styles/fonts/NotoSansKR-Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "NotoSansRegular";
+    src: url("styles/fonts/NotoSansKR-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "NotoSansThin";
+    src: url("styles/fonts/NotoSansKR-Thin.otf") format("opentype");
 }

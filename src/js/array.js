@@ -1,3 +1,9 @@
+import skill_html from 'images/skill_html.png';
+import skill_css from 'images/skill_css.png';
+import skill_js from 'images/skill_js.png';
+import skill_sass from 'images/skill_sass.png';
+import skill_react from 'images/skill_react.png';
+
 export const docsList = ["html", "jsx", "js", "css", "scss"];
 
 export const errorList = {
@@ -11,4 +17,12 @@ export const moive_sort_list = [
     { value: "year", title: "최신순" },
     { value: "rating", title: "평점순" },
     { value: "download_count", title: "다운로드순" }
+]
+
+export const developeSkills = [
+    { title: "", image: skill_html },
+    { title: "", image: skill_css },
+    { title: "", image: skill_js },
+    { title: "", image: skill_sass },
+    { title: "", image: skill_react },
 ]
