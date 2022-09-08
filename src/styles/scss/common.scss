@@ -116,7 +116,66 @@
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: $gray400;
+        background-color: $dark;
         border-radius: 10px;
+        background-clip: padding-box;
+        border: 2px solid transparent;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $brown;
+        border-radius: 10px;
+    }
+}
+
+.table-container {
+    width: 100%;
+    border: 1px solid $gray400;
+    border-radius: 15px;
+
+    .table-type1 {
+        width: 100%;
+        border-collapse: collapse;
+
+        >thead {
+            background-color: $mainBg;
+
+            th {
+                height: 50px;
+                font-size: 16px;
+                color: $dark;
+
+                &.small {
+                    width: 100px;
+                }
+
+                &:first-child {
+                    border-radius: 15px 0 0 0;
+                }
+
+                &:last-child {
+                    border-radius: 0 15px 0 0;
+                }
+            }
+        }
+
+        >tbody {
+
+            >tr {
+                border-bottom: 1px solid $gray300;
+
+                >td {
+                    text-align: center;
+                    font-size: 14px;
+                    height: 50px;
+                    padding: 25px 0;
+
+                }
+
+                &:last-child {
+                    border: none;
+                }
+            }
+        }
     }
 }

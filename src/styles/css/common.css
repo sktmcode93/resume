@@ -160,6 +160,61 @@
 }
 
 .scroll-design1::-webkit-scrollbar-thumb {
-  background-color: #BDBDBD;
+  background-color: #61573C;
   border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+
+.scroll-design1::-webkit-scrollbar-track {
+  background-color: #B3A88A;
+  border-radius: 10px;
+}
+
+.table-container {
+  width: 100%;
+  border: 1px solid #BDBDBD;
+  border-radius: 15px;
+}
+
+.table-container .table-type1 {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container .table-type1 > thead {
+  background-color: #F9F5EA;
+}
+
+.table-container .table-type1 > thead th {
+  height: 50px;
+  font-size: 16px;
+  color: #61573C;
+}
+
+.table-container .table-type1 > thead th.small {
+  width: 100px;
+}
+
+.table-container .table-type1 > thead th:first-child {
+  border-radius: 15px 0 0 0;
+}
+
+.table-container .table-type1 > thead th:last-child {
+  border-radius: 0 15px 0 0;
+}
+
+.table-container .table-type1 > tbody > tr {
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.table-container .table-type1 > tbody > tr > td {
+  text-align: center;
+  font-size: 14px;
+  height: 50px;
+  padding: 25px 0;
+}
+
+.table-container .table-type1 > tbody > tr:last-child {
+  border: none;
 }
