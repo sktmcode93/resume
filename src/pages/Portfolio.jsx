@@ -1,10 +1,12 @@
-import { memo } from "react";
+import { memo, useEffect } from "react";
 
 import HomeLayout from "layout/HomeLayout";
 
 const Portfolio = () => {
     const changePage = (target) => { window.location.replace(`/${target}`); }
-    return <HomeLayout cn="portfolio p-main">
+
+    useEffect(() => { document.title = "포트폴리오 | 김성엽" }, [])
+    return <HomeLayout cn="portfolio h-main">
         <ul className="pf-list">
             <li>
                 <div>
