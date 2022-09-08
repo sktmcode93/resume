@@ -1,6 +1,6 @@
 @import './styles';
 
-.p-main {
+.h-main {
     width: 100vw;
     height: 100vh;
     min-width: 1280px;
@@ -18,7 +18,7 @@
             margin-top: 5%;
             text-align: center;
             height: 15%;
-            background-image: url('images/김성엽.jpg');
+            // background-image: url('images/김성엽.jpg');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
@@ -133,53 +133,38 @@
             margin-bottom: 36px;
         }
 
-        >table {
+        table {
             width: 100%;
 
-            thead {
-                background-color: $blue700;
-                color: white;
+            >tbody {
+                >tr {
+                    >td {
+                        text-align: center;
+                        padding: 10px 0;
 
-                th {
-                    border: 1px solid white;
-                    padding: 5px 0;
-                }
-            }
-
-            tbody {
-                tr {
-                    border-bottom: 1px solid $blue700;
-                }
-            }
-
-            td {
-                text-align: center;
-                padding: 10px 0;
-
-                >ol {
-                    border: 1px solid $gray900;
-                    width: 120px;
-
-                    >li {
-                        @include flex-style();
-
-                        >h5 {
-                            width: 50px;
+                        >h4 {
+                            font-size: 18px;
                         }
 
-                        >span {
-                            display: block;
-                            width: 60px;
-                            text-align: center;
+
+                        >a {
+                            color: $blue800;
+                            font-weight: bold;
+                        }
+
+                        &.did {
+                            text-align: left;
+                            width: 30%;
+                            padding-left: 15px;
+
+                            >p {
+                                width: 90%;
+                            }
                         }
                     }
                 }
-
-                >a {
-                    color: $blue800;
-                    font-weight: bold;
-                }
             }
+
         }
     }
 

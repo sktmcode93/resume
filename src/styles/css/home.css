@@ -1,5 +1,4 @@
-@charset "UTF-8";
-.p-main {
+.h-main {
   width: 100vw;
   height: 100vh;
   min-width: 1280px;
@@ -14,37 +13,36 @@
   background-color: #F9F5EA;
 }
 
-.p-main > .side-bar {
+.h-main > .side-bar {
   width: 13%;
   min-width: 280px;
   height: 100%;
 }
 
-.p-main > .side-bar > .img-box {
+.h-main > .side-bar > .img-box {
   margin-top: 5%;
   text-align: center;
   height: 15%;
-  background-image: url("images/김성엽.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-.p-main > .side-bar > .name-box {
+.h-main > .side-bar > .name-box {
   margin-top: 25px;
   text-align: center;
 }
 
-.p-main > .side-bar > .name-box > h2 {
+.h-main > .side-bar > .name-box > h2 {
   font-size: 18px;
   font-family: "ChosunNm";
 }
 
-.p-main > .side-bar > .nav-list {
+.h-main > .side-bar > .nav-list {
   margin-top: 80px;
 }
 
-.p-main > .side-bar > .nav-list > li {
+.h-main > .side-bar > .nav-list > li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,7 +57,7 @@
   position: relative;
 }
 
-.p-main > .side-bar > .nav-list > li > a {
+.h-main > .side-bar > .nav-list > li > a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -78,22 +76,22 @@
   border-radius: 50%;
 }
 
-.p-main > .side-bar > .nav-list > li > a > svg {
+.h-main > .side-bar > .nav-list > li > a > svg {
   font-size: 48px;
   margin-bottom: 10px;
 }
 
-.p-main > .side-bar > .nav-list > li > a > span {
+.h-main > .side-bar > .nav-list > li > a > span {
   font-family: "NexonGothicB";
   font-size: 24px;
 }
 
-.p-main > .side-bar > .nav-list > li.active > a {
+.h-main > .side-bar > .nav-list > li.active > a {
   background-color: #61573C;
   color: white;
 }
 
-.p-main > section {
+.h-main > section {
   width: calc(100vw - 280px);
   height: 100%;
   border-radius: 70px 0 0 70px;
@@ -103,15 +101,15 @@
   padding-bottom: 200px;
 }
 
-.p-main > section.scroll-design1::-webkit-scrollbar {
+.h-main > section.scroll-design1::-webkit-scrollbar {
   width: 15px;
 }
 
-.p-main > section.scroll-design1::-webkit-scrollbar {
+.h-main > section.scroll-design1::-webkit-scrollbar {
   width: 15px;
 }
 
-.p-main > section.scroll-design1::-webkit-scrollbar {
+.h-main > section.scroll-design1::-webkit-scrollbar {
   width: 15px;
 }
 
@@ -152,57 +150,32 @@
   margin-bottom: 36px;
 }
 
-.home .counts > table {
+.home .counts table {
   width: 100%;
 }
 
-.home .counts > table thead {
-  background-color: #1976D2;
-  color: white;
-}
-
-.home .counts > table thead th {
-  border: 1px solid white;
-  padding: 5px 0;
-}
-
-.home .counts > table tbody tr {
-  border-bottom: 1px solid #1976D2;
-}
-
-.home .counts > table td {
+.home .counts table > tbody > tr > td {
   text-align: center;
   padding: 10px 0;
 }
 
-.home .counts > table td > ol {
-  border: 1px solid #212121;
-  width: 120px;
+.home .counts table > tbody > tr > td > h4 {
+  font-size: 18px;
 }
 
-.home .counts > table td > ol > li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.home .counts > table td > ol > li > h5 {
-  width: 50px;
-}
-
-.home .counts > table td > ol > li > span {
-  display: block;
-  width: 60px;
-  text-align: center;
-}
-
-.home .counts > table td > a {
+.home .counts table > tbody > tr > td > a {
   color: #1565C0;
   font-weight: bold;
+}
+
+.home .counts table > tbody > tr > td.did {
+  text-align: left;
+  width: 30%;
+  padding-left: 15px;
+}
+
+.home .counts table > tbody > tr > td.did > p {
+  width: 90%;
 }
 
 .skills article {
