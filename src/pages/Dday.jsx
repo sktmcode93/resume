@@ -2,14 +2,18 @@ import { memo, useEffect, useState } from "react";
 
 import MainLayout from "layout/MainLayout";
 import AddDday from "../Components/dday/Modal__AddDday";
+import ActiveButton from "Components/ActiveButton";
 
-import { clearDDay, findLeftTimes } from "js/dday";
-import { FaCalendarPlus } from 'react-icons/fa';
+import { clearDDay, findDays, findLeftTimes } from "js/dday";
+import { FaCalendarPlus, FaListUl, FaRegWindowMaximize, FaTrash } from 'react-icons/fa';
 import { changeObjVal } from "js/common";
 
 const Dday = () => {
     const [nowTime, setNowTime] = useState(new Date());
     const [dayList, setDayList] = useState([]);
+    const [filt, setFilt] = useState("all");
+    const [viewMethod, setViewMethod] = useState("post");
+
     const [addModal, setAddModal] = useState(false);
     const [addState, setAddState] = useState({ title: "", dday: "", id: 0 })
 
@@ -25,6 +29,7 @@ const Dday = () => {
             changeObjVal("id", Number(list[list.length - 1].id) + 1, setAddState);
         }
         const timer = setInterval(() => { setNowTime(new Date()); }, 1000);
+        document.title = "D-Day Counter | 김성엽";
         return () => { clearInterval(timer) };
     }, [])
     const delDay = id => {
@@ -37,13 +42,43 @@ const Dday = () => {
             return clone;
         })
     }
+    console.log(dayList);
     return (
-        <MainLayout id="d-day">
-            <aside className="d-day-control">
-                <div className="left"></div>
+        <MainLayout id="d-day" cn="p-main">
+            <header className="d-header">
+                <div className="left">
+                    <h2>D-Day Counter | Portfolio</h2>
+                </div>
                 <div className="right">
-                    <button onClick={e => { setAddModal(true); e.stopPropagation(); }}><FaCalendarPlus />새 디데이</button>
-                    <button onClick={() => { clearDDay(setDayList) }}>데이터 초기화</button>
+                    <button onClick={e => { setAddModal(true); e.stopPropagation(); }}>
+                        <FaCalendarPlus />
+                        <p onClick={e => { e.stopPropagation(); }}>추가</p>
+                    </button>
+                    <button className="clear" onClick={() => { clearDDay(setDayList) }}>
+                        <FaTrash />
+                        <p onClick={e => { e.stopPropagation(); }} >초기화</p>
+                    </button>
+                </div>
+            </header>
+            <aside className="d-helper">
+                <div className="left">
+                    <ActiveButton stand={filt} condition="all" changeFn={setFilt}>
+                        <h5>전체 Days</h5><p>{dayList.length}</p>
+                    </ActiveButton>
+                    <ActiveButton stand={filt} condition="left" changeFn={setFilt}>
+                        <h5>남은 Days</h5><p>{findDays(false, dayList)}</p>
+                    </ActiveButton>
+                    <ActiveButton stand={filt} condition="past" changeFn={setFilt}>
+                        <h5>지난 Days</h5><p>{findDays(true, dayList)}</p>
+                    </ActiveButton>
+                </div>
+                <div className="right">
+                    <ActiveButton stand={viewMethod} condition="post" changeFn={setViewMethod}>
+                        <FaRegWindowMaximize />
+                    </ActiveButton>
+                    <ActiveButton stand={viewMethod} condition="list" changeFn={setViewMethod}>
+                        <FaListUl />
+                    </ActiveButton>
                 </div>
             </aside>
             <ul className="d-day-list">

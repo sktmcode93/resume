@@ -25,3 +25,12 @@ export const clearDDay = setDayList => {
     localStorage.setItem("dday", "");
     setDayList([]);
 }
+
+export const findDays = (isPast, lists) => {
+    const day = new Date();
+    return lists.reduce((acc, { dday }) => {
+        if (isPast && new Date(dday) < day) ++acc;
+        if (!isPast && new Date(dday) >= day) ++acc;
+        return acc;
+    }, 0);
+}
