@@ -7,8 +7,8 @@ import { developeSkills, workSkills } from "js/array";
 
 const Skills = () => {
     return <HomeLayout cn="skills p-main">
-        <SkillList cn="develope" category="개발기술" lists={developeSkills} />
-        <SkillList cn="work" category="소통기술" lists={workSkills} />
+        <SkillList cn="develope" category={<><b>개발</b>기술</>} lists={developeSkills} />
+        <SkillList cn="work" category={<><b>소통</b>기술</>} lists={workSkills} />
     </HomeLayout>
 }
 

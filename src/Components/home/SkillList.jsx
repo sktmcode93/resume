@@ -3,7 +3,7 @@ import { memo } from "react";
 const SkillList = ({ cn, lists, category }) => {
     return <article className={cn}>
         <h3>{category}</h3>
-        <ul>
+        <ul className="scroll-design1">
             {lists.map(({ title, image, content }, idx) => (
                 <li key={`skills_${cn}_${idx}`}>
                     <div>
