@@ -1,40 +1,37 @@
 import { memo, useEffect } from "react";
 
 import HomeLayout from "layout/HomeLayout";
+import PortList from "Components/home/PortList";
+
+import thumb_dday from 'images/thumbnail_dday.jpg';
 
 const Portfolio = () => {
-    const changePage = (target) => { window.location.replace(`/${target}`); }
+
 
     useEffect(() => { document.title = "포트폴리오 | 김성엽" }, [])
     return <HomeLayout cn="portfolio h-main">
         <ul className="pf-list">
-            <li>
-                <div>
-                    디데이<br />
-                    여기에 이후에 이미지 들감
-                </div>
-                <h5>D-Day Counter</h5>
-                <button>설명</button>
-                <button onClick={() => changePage("d-day-counter")}>이동하기</button>
-            </li>
-            <li>
-                <div>
-                    투두리스트<br />
-                    여기에 이후에 이미지 들감
-                </div>
-                <h5>Todo List</h5>
-                <button>설명</button>
-                <button onClick={() => changePage("todo-list")}>이동하기</button>
-            </li>
-            <li>
-                <div>
-                    영화검색<br />
-                    여기에 이후에 이미지 들감
-                </div>
-                <h5>Movie Bank</h5>
-                <button>설명</button>
-                <button onClick={() => changePage("movie-bank")}>이동하기</button>
-            </li>
+            <PortList image={thumb_dday} title="D-Day Counter" targetPage="d-day-counter">
+                <p>- localStorage를 통해 데이터를 보존</p>
+                <p>- 포스트뷰/리스트뷰 기능</p>
+                <p>- 필터(전체D-day / 지난 D-day / 남은 D-day) 기능</p>
+                <p>- 새로운 D-Day 추가 및 데이터 초기화(localStorage를 초기화)</p>
+                <p>- 개별 삭제 기능</p>
+            </PortList>
+            <PortList image={thumb_dday} title="Todo List" targetPage="todo-list">
+                <p>- localStorage를 통해 데이터를 보존</p>
+                <p>- 포스트뷰/리스트뷰 기능</p>
+                <p>- 필터(전체D-day / 지난 D-day / 남은 D-day) 기능</p>
+                <p>- 새로운 D-Day 추가 및 데이터 초기화(localStorage를 초기화)</p>
+                <p>- 개별 삭제 기능</p>
+            </PortList>
+            <PortList image={thumb_dday} title="Movie Bank" targetPage="movie-bank">
+                <p>- localStorage를 통해 데이터를 보존</p>
+                <p>- 포스트뷰/리스트뷰 기능</p>
+                <p>- 필터(전체D-day / 지난 D-day / 남은 D-day) 기능</p>
+                <p>- 새로운 D-Day 추가 및 데이터 초기화(localStorage를 초기화)</p>
+                <p>- 개별 삭제 기능</p>
+            </PortList>
         </ul>
     </HomeLayout>
 }
