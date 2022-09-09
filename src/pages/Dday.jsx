@@ -2,6 +2,8 @@ import { memo, useEffect, useState } from "react";
 
 import MainLayout from "layout/MainLayout";
 import AddDday from "../Components/dday/Modal__AddDday";
+import PostView from "Components/dday/PostView";
+import ListView from "Components/dday/ListView";
 import ActiveButton from "Components/ActiveButton";
 
 import { clearDDay, findDays, findLeftTimes } from "js/dday";
@@ -42,7 +44,14 @@ const Dday = () => {
             return clone;
         })
     }
-    console.log(dayList);
+    const renderDayList = () => {
+        const lists = filt === "all" ? dayList : findDays(filt === "left" ? false : true, dayList);
+        return lists.map(({ dday, title, id }, idx) => {
+            const lefts = findLeftTimes(dday, nowTime);
+            const liProps = { idx, title, dday, lefts, delDay: () => { delDay(id) } }
+            return viewMethod === "post" ? <PostView {...liProps} key={`d_day_${idx}`} /> : <ListView {...liProps} key={`d_day_${idx}`} />
+        })
+    }
     return (
         <MainLayout id="d-day" cn="p-main">
             <header className="d-header">
@@ -66,10 +75,10 @@ const Dday = () => {
                         <h5>전체 Days</h5><p>{dayList.length}</p>
                     </ActiveButton>
                     <ActiveButton stand={filt} condition="left" changeFn={setFilt}>
-                        <h5>남은 Days</h5><p>{findDays(false, dayList)}</p>
+                        <div className="blue"></div><h5>남은 Days</h5><p>{findDays(false, dayList).length}</p>
                     </ActiveButton>
                     <ActiveButton stand={filt} condition="past" changeFn={setFilt}>
-                        <h5>지난 Days</h5><p>{findDays(true, dayList)}</p>
+                        <div className="red"></div><h5>지난 Days</h5><p>{findDays(true, dayList).length}</p>
                     </ActiveButton>
                 </div>
                 <div className="right">
@@ -81,24 +90,7 @@ const Dday = () => {
                     </ActiveButton>
                 </div>
             </aside>
-            <ul className="d-day-list">
-                {dayList.map(({ title, dday, id }, idx) => {
-                    const lefts = findLeftTimes(dday, nowTime);
-                    return <li key={`d_day_${idx}`}>
-                        <div className="top">
-                            <h3>{title}</h3>
-                            <button onClick={() => { delDay(id) }}>X</button>
-                        </div>
-                        <h4>{dday}</h4>
-                        <ol className="times">
-                            {Object.keys(lefts).map(k => <li key={`d_day_${idx}_${k}`}>
-                                <h5>{lefts[k]}</h5>
-                                <p>{k}</p>
-                            </li>)}
-                        </ol>
-                    </li>
-                })}
-            </ul>
+            <ul className={viewMethod === "post" ? "d-day-list" : "d-day-list list"}>{renderDayList()}</ul>
             {addModal && <AddDday {...addProps} />}
         </MainLayout>
     )
