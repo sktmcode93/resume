@@ -28,9 +28,9 @@ export const clearDDay = setDayList => {
 
 export const findDays = (isPast, lists) => {
     const day = new Date();
-    return lists.reduce((acc, { dday }) => {
-        if (isPast && new Date(dday) < day) ++acc;
-        if (!isPast && new Date(dday) >= day) ++acc;
+    return lists.reduce((acc, cur) => {
+        if (isPast && new Date(cur.dday) < day) acc.push(cur);
+        if (!isPast && new Date(cur.dday) >= day) acc.push(cur);
         return acc;
-    }, 0);
+    }, []);
 }
