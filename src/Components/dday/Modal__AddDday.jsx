@@ -1,4 +1,5 @@
-import { memo } from "react";
+import $ from 'jquery';
+import { memo, useEffect } from "react";
 
 import ModalLayout1 from "layout/ModalLayout1";
 
@@ -16,6 +17,11 @@ const AddDday = ({ addState, setAddState, setAddModal, setDayList }) => {
         const newId = Number(addState.id) + 1;
         setAddState({ title: "", dday: "", id: newId });
     }
+
+    useEffect(() => {
+        $(".add-d-day .name").focus();
+    }, [])
+
     return (
         <ModalLayout1
             cn="add-d-day modal-type1"
@@ -24,7 +30,7 @@ const AddDday = ({ addState, setAddState, setAddModal, setDayList }) => {
         >
             <label>
                 <h5>디데이명</h5>
-                <input type="text" value={addState.title} onChange={e => changeObjVal("title", e.target.value, setAddState)} />
+                <input type="text" value={addState.title} onChange={e => changeObjVal("title", e.target.value, setAddState)} className="name" />
             </label>
             <label>
                 <h5>날짜</h5>
