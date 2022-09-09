@@ -150,3 +150,14 @@
     color: white;
     border-radius: 8px;
 }
+
+.image-box {
+    position: relative;
+
+    >img {
+        @include position-style($top: 0, $left: 0, $bottom: 0, $right: 0);
+        width: auto;
+        height: auto;
+        margin: auto;
+    }
+}
