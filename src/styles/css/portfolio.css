@@ -117,6 +117,10 @@
   background-color: #F9F5EA;
 }
 
+#d-day > .container {
+  background-color: #F5F5F5;
+}
+
 #d-day .d-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -255,6 +259,23 @@
           transform: translateY(2px);
 }
 
+#d-day .d-helper > .left button > div {
+  margin-right: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+#d-day .d-helper > .left button > div.blue {
+  background-color: #64B5F6;
+}
+
+#d-day .d-helper > .left button > div.red {
+  background-color: #E57373;
+}
+
 #d-day .d-helper > .left button.active > h5 {
   font-family: "NotoSansRegular";
   color: #388E3C;
@@ -333,17 +354,71 @@
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  height: calc(100% - 120px);
+  overflow: auto;
+}
+
+#d-day .d-day-list.list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow-x: visible;
+  overflow-y: auto;
 }
 
 #d-day .d-day-list > li {
   position: relative;
-  width: 150px;
-  height: 150px;
-  background-color: #FFEBEE;
+  background-color: white;
   margin: 15px;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
 }
 
-#d-day .d-day-list > li > .top {
+#d-day .d-day-list > li span {
+  position: absolute;
+  left: 15px;
+  top: -15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+#d-day .d-day-list > li span.blue {
+  background-color: #64B5F6;
+  -webkit-box-shadow: 0 8px 12px rgba(0, 0, 255, 0.3);
+          box-shadow: 0 8px 12px rgba(0, 0, 255, 0.3);
+}
+
+#d-day .d-day-list > li span.red {
+  background-color: #E57373;
+  -webkit-box-shadow: 0 8px 12px rgba(255, 0, 0, 0.3);
+          box-shadow: 0 8px 12px rgba(255, 0, 0, 0.3);
+}
+
+#d-day .d-day-list > li h3 {
+  font-size: 24px;
+  font-family: "NotoSansBold";
+  letter-spacing: 1.5px;
+}
+
+#d-day .d-day-list > li h4 {
+  font-size: 18px;
+}
+
+#d-day .d-day-list > li .times {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -351,54 +426,12 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #EF9A9A;
-  padding: 0 10px 0 15px;
 }
 
-#d-day .d-day-list > li > .top > h3 {
-  font-size: 16px;
-  color: white;
-  height: 30px;
-  line-height: 30px;
-  font-family: "MaruBuriR";
-  letter-spacing: 3px;
-  font-weight: normal;
-}
-
-#d-day .d-day-list > li > .top > button {
-  font-family: "NexonGothicB";
-  padding: 0 5px;
-  height: 30px;
-}
-
-#d-day .d-day-list > li > h4 {
-  margin-top: 12px;
-  text-align: center;
-  font-size: 16px;
-  font-family: "MaruBuriR";
-}
-
-#d-day .d-day-list > li > ol.times {
-  margin-top: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-#d-day .d-day-list > li > ol.times > li {
+#d-day .d-day-list > li .times > li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -413,24 +446,98 @@
   margin: 0 5px;
 }
 
-#d-day .d-day-list > li > ol.times > li > h5 {
-  font-size: 15px;
-  font-weight: normal;
-  font-family: "Pretendard";
+#d-day .d-day-list > li .times > li > h5 {
+  font-size: 18px;
 }
 
-#d-day .d-day-list > li > ol.times > li > p {
-  font-size: 12px;
+#d-day .d-day-list > li .times > li > p {
+  font-size: 14px;
 }
 
-#d-day .d-day-list > li::before {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  content: '';
+#d-day .d-day-list > li.post {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 240px;
+  height: 240px;
+  padding: 10px 15px 20px 30px;
+}
+
+#d-day .d-day-list > li.post > .btn-box {
+  text-align: right;
+}
+
+#d-day .d-day-list > li.post > .btn-box > button {
+  font-family: "NexonGothicB";
+  padding: 0 5px;
+  height: 30px;
+}
+
+#d-day .d-day-list > li.post > h4 {
+  margin-top: 24px;
+  margin-left: 8px;
+}
+
+#d-day .d-day-list > li.post > .times {
+  margin-top: 24px;
+  margin-left: 3px;
+}
+
+#d-day .d-day-list > li.list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 95%;
+  height: 80px;
+  padding: 15px 30px;
+}
+
+#d-day .d-day-list > li.list span {
+  top: 50%;
+  left: -18px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+#d-day .d-day-list > li.list > .infos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: calc(100% - 20px);
+}
+
+#d-day .d-day-list > li.list > .infos > h3 {
+  width: 50%;
+}
+
+#d-day .d-day-list > li.list > .infos > h4 {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  width: 240px;
+}
+
+#d-day .d-day-list > li.list > button {
   width: 20px;
-  height: 20px;
-  background: linear-gradient(315deg, #FFFFFF 0%, #FFFFFF 40%, #EF9A9A 100%);
+  font-family: "NexonGothicB";
+  font-size: 18px;
 }
 
 #todo-list > aside {

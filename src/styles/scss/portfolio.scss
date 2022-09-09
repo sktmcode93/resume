@@ -73,6 +73,10 @@
     @include flex-style(row, center, center);
     background-color: $mainBg;
 
+    >.container {
+        background-color: $gray100;
+    }
+
     // 페이지 이름 및 추가 삭제하는 기능
     .d-header {
         @include flex-style(row, space-between, center);
@@ -151,6 +155,22 @@
                     transform: translateY(2px);
                 }
 
+                >div {
+                    margin-right: 5px;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    transform: translateY(2px);
+
+                    &.blue {
+                        background-color: $blue300;
+                    }
+
+                    &.red {
+                        background-color: $red300;
+                    }
+                }
+
                 &.active {
                     >h5 {
                         font-family: $NotoRegular;
@@ -223,46 +243,56 @@
     .d-day-list {
         @include flex-style();
         flex-wrap: wrap;
+        height: calc(100% - 120px);
+        overflow: auto;
+
+        &.list {
+            @include flex-style(column, flex-start, center);
+            flex-wrap: nowrap;
+            overflow-x: visible;
+            overflow-y: auto;
+        }
 
         >li {
             position: relative;
-            width: 150px;
-            height: 150px;
-            background-color: $red50;
+            background-color: white;
             margin: 15px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
 
-            >.top {
-                @include flex-style(row, space-between, center);
-                background-color: $red200;
-                padding: 0 10px 0 15px;
+            // 메모 잔여 및 지난 일수를 아는 아이콘
+            span {
+                @include position-style($left : 15px, $top : -15px);
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
 
-                >h3 {
-                    font-size: 16px;
-                    color: white;
-                    height: 30px;
-                    line-height: 30px;
-                    font-family: $font2;
-                    letter-spacing: 3px;
-                    font-weight: normal;
+                &.blue {
+                    background-color: $blue300;
+                    box-shadow: 0 8px 12px rgba(0, 0, 255, 0.3);
                 }
 
-                >button {
-                    font-family: $font3;
-                    padding: 0 5px;
-                    height: 30px;
+                &.red {
+                    background-color: $red300;
+                    box-shadow: 0 8px 12px rgba(255, 0, 0, 0.3);
                 }
             }
 
-            >h4 {
-                margin-top: 12px;
-                text-align: center;
-                font-size: 16px;
-                font-family: $font2;
+            // 디데이 제목
+            h3 {
+                font-size: 24px;
+                font-family: $NotoBold;
+                letter-spacing: 1.5px;
             }
 
-            >ol.times {
-                margin-top: 20px;
-                @include flex-style($justifyVal : center);
+            // D-Day
+            h4 {
+                font-size: 18px;
+            }
+
+            // 잔여 시간 또는 지난 일수를 표현
+            .times {
+                @include flex-style($alignVal: center);
 
                 >li {
                     @include flex-style($alignVal : flex-end);
@@ -271,23 +301,74 @@
                     margin: 0 5px;
 
                     >h5 {
-                        font-size: 15px;
-                        font-weight: normal;
-                        font-family: $font1;
+                        font-size: 18px;
                     }
 
                     >p {
-                        font-size: 12px;
+                        font-size: 14px;
                     }
                 }
             }
 
-            &::before {
-                @include position-style($right : 0, $bottom : 0);
-                content: '';
-                width: 20px;
-                height: 20px;
-                background: linear-gradient(315deg, #FFFFFF 0%, #FFFFFF 40%, #EF9A9A 100%);
+            &.post {
+                @include flex-style(column);
+                width: 240px;
+                height: 240px;
+                padding: 10px 15px 20px 30px;
+
+                // 삭제하는 버튼
+                >.btn-box {
+                    text-align: right;
+
+                    >button {
+                        font-family: $font3;
+                        padding: 0 5px;
+                        height: 30px;
+                    }
+                }
+
+                >h4 {
+                    margin-top: 24px;
+                    margin-left: 8px;
+                }
+
+                >.times {
+                    margin-top: 24px;
+                    margin-left: 3px;
+                }
+            }
+
+            &.list {
+                @include flex-style(row, space-between, center);
+                width: 95%;
+                height: 80px;
+                padding: 15px 30px;
+
+                span {
+                    top: 50%;
+                    left: -18px;
+                    transform: translateY(-50%);
+                }
+
+                >.infos {
+                    @include flex-style();
+                    width: calc(100% - 20px);
+
+                    >h3 {
+                        width: 50%;
+                    }
+
+                    >h4 {
+                        transform: translateY(4px);
+                        width: 240px;
+                    }
+                }
+
+                >button {
+                    width: 20px;
+                    font-family: $font3;
+                    font-size: 18px;
+                }
             }
         }
     }
