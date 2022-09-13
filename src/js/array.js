@@ -40,3 +40,5 @@ export const workSkills = [
     { title: "[열린생각]", image: skill_openmind, content: "개발 도중 다른 동료가 알아야 될 정보가 생길 시 전달하여 에너지 및 시간 낭비 방지" },
     { title: "[협력]", image: skill_help, content: "서로의 일의 경계가 존재하지만 그렇다 하여 도움이 필요한 동료를 외면하지 않음" },
 ]
+
+export const todo_colors = ["lightRed", "lightYellow", "lightGreen", "lightBlue", "lightGray", "red", "yellow", "green", "blue", "gray"];
