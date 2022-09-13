@@ -8,6 +8,7 @@
           flex-direction: row;
   width: 100%;
   height: 100%;
+  background-color: #F9F5EA;
 }
 
 .p-main > .container {
@@ -114,7 +115,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #F9F5EA;
 }
 
 #d-day > .container {
@@ -540,14 +540,70 @@
   font-size: 18px;
 }
 
-#todo-list > aside {
+#todo-list > .container {
+  padding: 0;
+  background-image: url("images/background_todolist.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+#todo-list header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 25px;
+  border-radius: 0 60px 0 0;
+  background-color: #BBDEFB;
+}
+
+#todo-list header > h2 {
+  font-size: 36px;
+}
+
+#todo-list header > h2 > b {
+  color: #0D47A1;
+  margin-left: 18px;
+}
+
+#todo-list header > .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#todo-list header > .btns > li {
+  margin-right: 18px;
+}
+
+#todo-list header > .btns > li > button {
+  font-size: 18px;
+  color: #0D47A1;
+  border-bottom: 1px solid #0D47A1;
+}
+
+#todo-list .todo-side {
   width: 320px;
   height: 100%;
   background-color: #EEEEEE;
   border-right: 1px solid #424242;
 }
 
-#todo-list > aside > h2 {
+#todo-list .todo-side > h2 {
   background-color: #424242;
   color: white;
   text-align: center;
@@ -556,23 +612,23 @@
   font-family: "MaruBuriR";
 }
 
-#todo-list > aside > ul {
+#todo-list .todo-side > ul {
   width: 100%;
   margin-top: 24px;
   padding: 0 24px;
 }
 
-#todo-list > aside > ul > li {
+#todo-list .todo-side > ul > li {
   width: 100%;
 }
 
-#todo-list > aside > ul > li > h4 {
+#todo-list .todo-side > ul > li > h4 {
   font-size: 22px;
   font-family: "NexonGothicB";
   margin-bottom: 10px;
 }
 
-#todo-list > aside > ul > li > div {
+#todo-list .todo-side > ul > li > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -585,20 +641,274 @@
           justify-content: space-between;
 }
 
-#todo-list > aside > ul > li > div > select {
+#todo-list .todo-side > ul > li > div > select {
   width: 120px;
   font-size: 16px;
 }
 
-#todo-list > aside > ul > li > div > button {
+#todo-list .todo-side > ul > li > div > button {
   border-radius: 4px;
   border: 1px solid #424242;
   padding: 0 8px;
   font-size: 16px;
 }
 
-#todo-list > section {
-  width: calc(100% - 320px);
+#todo-list .today {
+  padding: 60px 70px;
+}
+
+#todo-list .today > .today-list > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  min-width: 960px;
+  height: calc(100vh - 200px);
+  overflow: auto;
+  width: 100%;
+}
+
+#todo-list .today > .today-list > ul input[type="text"] {
+  background-color: transparent;
+}
+
+#todo-list .today > .today-list > ul > li {
+  position: relative;
+  width: 45%;
+  margin: 30px 2.5%;
+  padding: 40px 30px;
+  border-radius: 16px;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+}
+
+#todo-list .today > .today-list > ul > li > h4 {
+  position: absolute;
+  left: 40px;
+  top: -25px;
+  width: 350px;
+  padding: 10px 0;
+  padding-left: 10px;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+}
+
+#todo-list .today > .today-list > ul > li > h4 > input {
+  width: 100%;
+  font-size: 18px;
+  font-family: "SebangGothic";
+}
+
+#todo-list .today > .today-list > ul > li > ol > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 18px;
+}
+
+#todo-list .today > .today-list > ul > li > ol > li > input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  margin-right: 24px;
+}
+
+#todo-list .today > .today-list > ul > li > ol > li > input[type="text"] {
+  padding-left: 10px;
+  font-size: 18px;
+  border-bottom: 1px solid #61573C;
+  width: 100%;
+}
+
+#todo-list .today > .today-list > ul > li > ol > li.add {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 0;
+}
+
+#todo-list .today > .today-list > ul > li > ol > li.add > button {
+  font-size: 18px;
+  width: 120px;
+  padding: 4px 0;
+  border: 1px solid #61573C;
+  border-radius: 18px;
+}
+
+#todo-list .today > .today-list > ul > li > .change-colors {
+  position: absolute;
+  right: 25px;
+  top: -30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#todo-list .today > .today-list > ul > li > .change-colors > li {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+#todo-list .today > .today-list > ul > li > .change-colors > li.red {
+  background-color: #EF5350;
+}
+
+#todo-list .today > .today-list > ul > li > .change-colors > li.yellow {
+  background-color: #FFEE58;
+}
+
+#todo-list .today > .today-list > ul > li > .change-colors > li.green {
+  background-color: #66BB6A;
+}
+
+#todo-list .today > .today-list > ul > li > .change-colors > li.blue {
+  background-color: #42A5F5;
+}
+
+#todo-list .today > .today-list > ul > li > .change-colors > li.gray {
+  background-color: #BDBDBD;
+}
+
+#todo-list .today > .today-list > ul > li > .change-colors > li.lightRed {
+  background-color: #FFEBEE;
+}
+
+#todo-list .today > .today-list > ul > li > .change-colors > li.lightYellow {
+  background-color: #FFFDE7;
+}
+
+#todo-list .today > .today-list > ul > li > .change-colors > li.lightGreen {
+  background-color: #E8F5E9;
+}
+
+#todo-list .today > .today-list > ul > li > .change-colors > li.lightBlue {
+  background-color: #E3F2FD;
+}
+
+#todo-list .today > .today-list > ul > li > .change-colors > li.lightGray {
+  background-color: #FAFAFA;
+}
+
+#todo-list .today > .today-list > ul > li.red {
+  background-color: #EF5350;
+}
+
+#todo-list .today > .today-list > ul > li.red > h4 {
+  background-color: #E53935;
+}
+
+#todo-list .today > .today-list > ul > li.red input {
+  color: white;
+}
+
+#todo-list .today > .today-list > ul > li.yellow {
+  background-color: #FFEE58;
+}
+
+#todo-list .today > .today-list > ul > li.yellow > h4 {
+  background-color: #FDD835;
+}
+
+#todo-list .today > .today-list > ul > li.green {
+  background-color: #66BB6A;
+}
+
+#todo-list .today > .today-list > ul > li.green > h4 {
+  background-color: #43A047;
+}
+
+#todo-list .today > .today-list > ul > li.green input {
+  color: white;
+}
+
+#todo-list .today > .today-list > ul > li.blue {
+  background-color: #42A5F5;
+}
+
+#todo-list .today > .today-list > ul > li.blue > h4 {
+  background-color: #1E88E5;
+}
+
+#todo-list .today > .today-list > ul > li.blue input {
+  color: white;
+}
+
+#todo-list .today > .today-list > ul > li.gray {
+  background-color: #BDBDBD;
+}
+
+#todo-list .today > .today-list > ul > li.gray > h4 {
+  background-color: #757575;
+}
+
+#todo-list .today > .today-list > ul > li.gray input {
+  color: white;
+}
+
+#todo-list .today > .today-list > ul > li.lightRed {
+  background-color: #FFEBEE;
+}
+
+#todo-list .today > .today-list > ul > li.lightRed > h4 {
+  background-color: #FFCDD2;
+}
+
+#todo-list .today > .today-list > ul > li.lightYellow {
+  background-color: #FFFDE7;
+}
+
+#todo-list .today > .today-list > ul > li.lightYellow > h4 {
+  background-color: #FFF9C4;
+}
+
+#todo-list .today > .today-list > ul > li.lightGreen {
+  background-color: #E8F5E9;
+}
+
+#todo-list .today > .today-list > ul > li.lightGreen > h4 {
+  background-color: #C8E6C9;
+}
+
+#todo-list .today > .today-list > ul > li.lightBlue {
+  background-color: #E3F2FD;
+}
+
+#todo-list .today > .today-list > ul > li.lightBlue > h4 {
+  background-color: #BBDEFB;
+}
+
+#todo-list .today > .today-list > ul > li.lightGray {
+  background-color: #FAFAFA;
+}
+
+#todo-list .today > .today-list > ul > li.lightGray > h4 {
+  background-color: #F5F5F5;
 }
 
 #movie-bank {

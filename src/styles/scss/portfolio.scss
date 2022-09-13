@@ -4,6 +4,7 @@
     @include flex-style();
     width: 100%;
     height: 100%;
+    background-color: $mainBg;
 
     >.container {
         width: calc(100% - 40px);
@@ -71,7 +72,6 @@
 
 #d-day {
     @include flex-style(row, center, center);
-    background-color: $mainBg;
 
     >.container {
         background-color: $gray100;
@@ -375,7 +375,46 @@
 }
 
 #todo-list {
-    >aside {
+
+    >.container {
+        padding: 0;
+        background-image: url('images/background_todolist.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    header {
+        @include flex-style(row, space-between, center);
+        padding: 10px 25px;
+        border-radius: 0 60px 0 0;
+        background-color: $blue100;
+
+        >h2 {
+            font-size: 36px;
+
+            >b {
+                color: $blue900;
+                margin-left: 18px;
+            }
+        }
+
+        >.btns {
+            @include flex-style();
+
+            >li {
+                margin-right: 18px;
+
+                >button {
+                    font-size: 18px;
+                    color: $blue900;
+                    border-bottom: 1px solid $blue900;
+                }
+            }
+        }
+    }
+
+    .todo-side {
         width: 320px;
         height: 100%;
         background-color: $gray200;
@@ -423,8 +462,236 @@
         }
     }
 
-    >section {
-        width: calc(100% - 320px);
+    .today {
+        padding: 60px 70px;
+
+        >.today-list {
+            >ul {
+                @include flex-style(row, center, flex-start);
+                flex-wrap: wrap;
+                min-width: 960px;
+                height: calc(100vh - 200px);
+                overflow: auto;
+                width: 100%;
+
+                input[type="text"] {
+                    background-color: transparent;
+                }
+
+                // 하나의 묶음 (카테고리, 색깔, 투두쓰)
+                >li {
+                    position: relative;
+                    width: 45%;
+                    margin: 30px 2.5%;
+                    padding: 40px 30px;
+                    border-radius: 16px;
+                    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+
+                    // 카테고리
+                    >h4 {
+                        @include position-style($left : 40px, $top : -25px);
+                        width: 350px;
+                        padding: 10px 0;
+                        padding-left: 10px;
+                        box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+                        border-radius: 16px;
+
+                        >input {
+                            width: 100%;
+                            font-size: 18px;
+                            font-family: $font4;
+                        }
+                    }
+
+                    // Todos
+                    >ol {
+                        >li {
+                            @include flex-style($alignVal :center);
+                            margin-bottom: 18px;
+
+                            >input[type="checkbox"] {
+                                width: 15px;
+                                height: 15px;
+                                cursor: pointer;
+                                margin-right: 24px;
+                            }
+
+                            >input[type="text"] {
+                                padding-left: 10px;
+                                font-size: 18px;
+                                border-bottom: 1px solid $dark;
+                                width: 100%;
+                            }
+
+                            &.add {
+                                justify-content: center;
+                                margin-bottom: 0;
+
+                                >button {
+                                    font-size: 18px;
+                                    width: 120px;
+                                    padding: 4px 0;
+                                    border: 1px solid $dark;
+                                    border-radius: 18px;
+                                }
+
+                            }
+                        }
+                    }
+
+                    >.change-colors {
+                        @include position-style($right :25px, $top : -30px);
+                        @include flex-style();
+
+                        >li {
+                            width: 25px;
+                            height: 25px;
+                            border-radius: 50%;
+                            margin-left: 10px;
+                            cursor: pointer;
+
+                            &.red {
+                                background-color: $red400;
+                            }
+
+                            &.yellow {
+                                background-color: $yellow400;
+                            }
+
+                            &.green {
+                                background-color: $green400;
+                            }
+
+                            &.blue {
+                                background-color: $blue400;
+                            }
+
+                            &.gray {
+                                background-color: $gray400;
+                            }
+
+                            &.lightRed {
+                                background-color: $red50;
+                            }
+
+                            &.lightYellow {
+                                background-color: $yellow50;
+                            }
+
+                            &.lightGreen {
+                                background-color: $green50;
+                            }
+
+                            &.lightBlue {
+                                background-color: $blue50;
+                            }
+
+                            &.lightGray {
+                                background-color: $gray50;
+                            }
+                        }
+
+                    }
+
+                    &.red {
+                        background-color: $red400;
+
+                        >h4 {
+                            background-color: $red600;
+
+                        }
+
+                        input {
+                            color: white;
+                        }
+                    }
+
+                    &.yellow {
+                        background-color: $yellow400;
+
+                        >h4 {
+                            background-color: $yellow600;
+                        }
+                    }
+
+                    &.green {
+                        background-color: $green400;
+
+                        >h4 {
+                            background-color: $green600;
+                        }
+
+                        input {
+                            color: white;
+                        }
+                    }
+
+                    &.blue {
+                        background-color: $blue400;
+
+                        >h4 {
+                            background-color: $blue600;
+                        }
+
+                        input {
+                            color: white;
+                        }
+                    }
+
+                    &.gray {
+                        background-color: $gray400;
+
+                        >h4 {
+                            background-color: $gray600;
+                        }
+
+                        input {
+                            color: white;
+                        }
+                    }
+
+                    &.lightRed {
+                        background-color: $red50;
+
+                        >h4 {
+                            background-color: $red100;
+                        }
+                    }
+
+                    &.lightYellow {
+                        background-color: $yellow50;
+
+                        >h4 {
+                            background-color: $yellow100;
+                        }
+                    }
+
+                    &.lightGreen {
+                        background-color: $green50;
+
+                        >h4 {
+                            background-color: $green100;
+                        }
+                    }
+
+                    &.lightBlue {
+                        background-color: $blue50;
+
+                        >h4 {
+                            background-color: $blue100;
+                        }
+                    }
+
+                    &.lightGray {
+                        background-color: $gray50;
+
+                        >h4 {
+                            background-color: $gray100;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
