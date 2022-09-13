@@ -1,0 +1,152 @@
+{
+    "datas": [
+        {
+            "cate_id": 0,
+            "category": "급하고 중요한 일",
+            "color": "red",
+            "todos": [
+                {
+                    "thing": "코딩",
+                    "isDone": true,
+                    "id": 0
+                },
+                {
+                    "thing": "개발 공부",
+                    "isDone": false,
+                    "id": 1
+                },
+                {
+                    "thing": "운동",
+                    "isDone": true,
+                    "id": 2
+                },
+                {
+                    "thing": "",
+                    "isDone": false,
+                    "id": 3
+                },
+                {
+                    "thing": "",
+                    "isDone": false,
+                    "id": 4
+                },
+                {
+                    "thing": "",
+                    "isDone": false,
+                    "id": 5
+                }
+            ]
+        },
+        {
+            "cate_id": 1,
+            "category": "급하지 않지만 중요한 일",
+            "color": "yellow",
+            "todos": [
+                {
+                    "thing": "양치",
+                    "isDone": false,
+                    "id": 0
+                },
+                {
+                    "thing": "이불 개기",
+                    "isDone": true,
+                    "id": 1
+                },
+                {
+                    "thing": "운동",
+                    "isDone": true,
+                    "id": 2
+                },
+                {
+                    "thing": "",
+                    "isDone": false,
+                    "id": 3
+                },
+                {
+                    "thing": "",
+                    "isDone": false,
+                    "id": 4
+                },
+                {
+                    "thing": "",
+                    "isDone": false,
+                    "id": 5
+                }
+            ]
+        },
+        {
+            "cate_id": 2,
+            "category": "급하지만 중요하지 않은 일",
+            "color": "green",
+            "todos": [
+                {
+                    "thing": "단순 업무",
+                    "isDone": true,
+                    "id": 0
+                },
+                {
+                    "thing": "이런 빈칸 채우기",
+                    "isDone": false,
+                    "id": 1
+                },
+                {
+                    "thing": "",
+                    "isDone": false,
+                    "id": 2
+                },
+                {
+                    "thing": "",
+                    "isDone": false,
+                    "id": 3
+                },
+                {
+                    "thing": "",
+                    "isDone": false,
+                    "id": 4
+                },
+                {
+                    "thing": "",
+                    "isDone": false,
+                    "id": 5
+                }
+            ]
+        },
+        {
+            "cate_id": 3,
+            "category": "급하지도 않고 중요하지도 않은 일",
+            "color": "blue",
+            "todos": [
+                {
+                    "thing": "점심 고민",
+                    "isDone": false,
+                    "id": 0
+                },
+                {
+                    "thing": "저녁 고민",
+                    "isDone": false,
+                    "id": 1
+                },
+                {
+                    "thing": "연예인 걱정",
+                    "isDone": true,
+                    "id": 2
+                },
+                {
+                    "thing": "",
+                    "isDone": false,
+                    "id": 3
+                },
+                {
+                    "thing": "",
+                    "isDone": false,
+                    "id": 4
+                },
+                {
+                    "thing": "",
+                    "isDone": false,
+                    "id": 5
+                }
+            ]
+        }
+    ]
+}
