@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/resume/static/css/main.2b465e94.css",
-    "main.js": "/resume/static/js/main.f1f6adfb.js",
+    "main.js": "/resume/static/js/main.4964cfdb.js",
     "static/js/787.b8eccc40.chunk.js": "/resume/static/js/787.b8eccc40.chunk.js",
     "static/media/ChosunNm.ttf": "/resume/static/media/ChosunNm.ee1e0c633de28f90bf84.ttf",
     "static/media/background_todolist.jpg": "/resume/static/media/background_todolist.80d587eba26cbfd9ddc7.jpg",
@@ -14,6 +14,7 @@
     "static/media/SEBANG Gothic.ttf": "/resume/static/media/SEBANG Gothic.3e9ea88a9f2dafefc1bb.ttf",
     "static/media/김성엽.jpg": "/resume/static/media/김성엽.c482d3737a1f62bb3574.jpg",
     "static/media/Pretendard-Regular.woff": "/resume/static/media/Pretendard-Regular.ab56c53f21ca6b32d15f.woff",
+    "static/media/thumbnail_moviebank.jpg": "/resume/static/media/thumbnail_moviebank.810a32033b438cf47706.jpg",
     "static/media/thumbnail_todolist.jpg": "/resume/static/media/thumbnail_todolist.0572f905e894c0ef2f97.jpg",
     "static/media/NEXON Lv2 Gothic Bold.woff": "/resume/static/media/NEXON Lv2 Gothic Bold.2604da741b82ca0577d8.woff",
     "static/media/MaruBuri-Regular.otf": "/resume/static/media/MaruBuri-Regular.ed429efab4a65eebc46e.otf",
@@ -32,11 +33,11 @@
     "static/media/skill_help.png": "/resume/static/media/skill_help.a9979efff2c718ef1edf.png",
     "index.html": "/resume/index.html",
     "main.2b465e94.css.map": "/resume/static/css/main.2b465e94.css.map",
-    "main.f1f6adfb.js.map": "/resume/static/js/main.f1f6adfb.js.map",
+    "main.4964cfdb.js.map": "/resume/static/js/main.4964cfdb.js.map",
     "787.b8eccc40.chunk.js.map": "/resume/static/js/787.b8eccc40.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2b465e94.css",
-    "static/js/main.f1f6adfb.js"
+    "static/js/main.4964cfdb.js"
   ]
 }
