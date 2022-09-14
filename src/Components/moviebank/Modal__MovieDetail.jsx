@@ -14,7 +14,7 @@ const ModalMovieDetail = ({ detail, setDetail }) => {
     useEffect(() => { window.addEventListener("click", outClick) }, [])
     return <section className="movie-detail modal-type1">
         <header>
-            <h3></h3>
+            <h3>{title_long}</h3>
             <button onClick={() => { setDetail(null) }}></button>
         </header>
         <article>
