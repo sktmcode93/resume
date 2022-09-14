@@ -312,9 +312,12 @@
                         margin-right: 24px;
                     }
 
-                    >.btn-type1 {
+                    >a {
                         @include position-style($right : 24px, $top : 24px);
                         background-color: $blue500;
+                        color: white;
+                        padding: 4px 8px;
+                        border-radius: 8px;
                     }
                 }
 

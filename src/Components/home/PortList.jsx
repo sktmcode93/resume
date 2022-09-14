@@ -1,4 +1,5 @@
 import { memo } from "react"
+import { Link } from "react-router-dom";
 
 const PortList = ({ image, title, targetPage, children }) => {
     const changePage = target => { window.location.replace(`/${target}`); }
@@ -9,7 +10,7 @@ const PortList = ({ image, title, targetPage, children }) => {
         <div className="explain">
             <nav>
                 <h5>{title}</h5>
-                <button className="btn-type1" onClick={() => changePage(targetPage)}>페이지로 이동하기</button>
+                <Link to={targetPage}>페이지로 이동하기</Link>
             </nav>
             <div>{children}</div>
         </div>

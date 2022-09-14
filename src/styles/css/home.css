@@ -393,11 +393,14 @@
   margin-right: 24px;
 }
 
-.portfolio .pf-list > li > .explain > nav > .btn-type1 {
+.portfolio .pf-list > li > .explain > nav > a {
   position: absolute;
   right: 24px;
   top: 24px;
   background-color: #2196F3;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 8px;
 }
 
 .portfolio .pf-list > li > .explain > div {
