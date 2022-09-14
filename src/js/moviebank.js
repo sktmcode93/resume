@@ -1,5 +1,4 @@
 export const checkCache = (cache, pageInfo) => {
-    console.log(pageInfo);
     if (!cache.length) return null;
     const { page, sorted_by, viewCount } = pageInfo;
     let index = -1;

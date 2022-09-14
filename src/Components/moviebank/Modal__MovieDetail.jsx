@@ -6,7 +6,7 @@ const ModalMovieDetail = ({ detail, setDetail }) => {
     const { title_long, medium_cover_image, title, rating, description_full, genres, id } = detail;
     const outClick = e => {
         for (let p of e.path) {
-            if (p.className.includes("movie-detail")) return;
+            if (p.className === "movie-detail modal-type1") return;
         }
         window.removeEventListener("click", outClick);
         setDetail(null);

@@ -25,7 +25,7 @@ const ModalPreviewList = ({ finding, previewList, setActiveInput }) => {
         {!finding && previewList.length && <div className='stand'><ul className="preview-list scroll-design1">
             {previewList.map((cur, idx) => {
                 const { small_cover_image, title, title_english, year, large_cover_image } = cur;
-                return <li onClick={() => console.log(title || title_english)} key={`preview_${idx}`}>
+                return <li key={`preview_${idx}`}>
                     <div className="thumbnail">
                         <img src={small_cover_image} alt={title || title_english} />
                     </div>

@@ -32,9 +32,23 @@ const MovieSearch = ({ setMovieData, pageInfo, setPageInfo }) => {
     }
 
     const searchMovieData = async () => {
-        // try{
+        try {
+            const result = await api__getMovieByQueryTerm(search);
+            const { movie_count, movies } = result.data.data;
+            setPageInfo(prev => {
+                const clone = { ...prev };
+                clone.totalCount = movie_count;
+                clone.page = 1;
+                return clone;
+            })
+            setMovieData(movies);
+        } catch (error) {
 
-        // }
+        }
+    }
+
+    const enterFn = e => {
+        if (e.keyCode === 13) searchMovieData();
     }
 
     const previewProps = { finding, previewList, setActiveInput };
@@ -42,7 +56,7 @@ const MovieSearch = ({ setMovieData, pageInfo, setPageInfo }) => {
     const { sorted_by, viewCount } = pageInfo;
     return <section className="movie-search">
         <article className="search">
-            <input type="text" value={search} onChange={findPreviewData} onFocus={() => setActiveInput(true)} className="search-input" />
+            <input type="text" value={search} onChange={findPreviewData} onFocus={() => setActiveInput(true)} onKeyDown={enterFn} className="search-input" />
             <button onClick={searchMovieData}><FaSearch /></button>
             {activeInput && search && <ModalPreviewList {...previewProps} />}
         </article>

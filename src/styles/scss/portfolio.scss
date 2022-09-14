@@ -696,26 +696,14 @@
 }
 
 #movie-bank {
-    @include flex-style();
 
-    >.movie-side {
-        width: 300px;
-        height: 100vh;
-        background-color: $gray100;
-
-        >h2 {
-            font-family: $font4;
-            font-size: 28px;
-            text-align: center;
-            padding: 28px 0;
-            background-color: $gray800;
-            color: white;
-            letter-spacing: 3px;
-        }
+    >.container {
+        padding: 0;
+        @include flex-style();
     }
 
-    >.right {
-        width: calc(100% - 300px);
+    .right {
+        width: 100%;
         @include flex-style(column, flex-start, center);
         padding-top: 72px;
 
@@ -752,6 +740,7 @@
                     width: 330px;
                     height: 300px;
                     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+                    background-color: white;
 
                     >div {
                         width: 100%;
@@ -1019,5 +1008,62 @@
 
     .prevent {
         display: none;
+    }
+}
+
+@media (max-width : 720px) {
+    #d-day {
+        .d-header {
+            >.left {
+                >h2 {
+                    font-size: 24px;
+                }
+            }
+        }
+
+        .d-helper {
+            >.left {
+                button {
+                    margin-right: 18px;
+
+                    >h5 {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        .d-day-list {
+            display: block;
+
+            >li {
+                margin: 25px auto;
+
+                h3 {
+                    font-size: 18px;
+                }
+
+                h4 {
+                    font-size: 16px;
+                }
+
+                .times {
+                    >li {
+                        >h5 {
+                            font-size: 16px;
+                        }
+
+                        >p {
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                &.post {
+                    width: 360px;
+                    height: 360px;
+                }
+            }
+        }
     }
 }

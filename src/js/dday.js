@@ -5,7 +5,7 @@ export const findLeftTimes = (dday, now) => {
     const leftMins = parseInt(wholeTime / 60) % 60;
     const leftHours = parseInt(wholeTime / 3600) % 24;
     const leftDays = parseInt(wholeTime / (3600 * 24));
-    if (wholeTime < 0) return { "일이 지났어요": Math.abs(leftDays) };
+    if (wholeTime < 0) return { "일 지남": Math.abs(leftDays) };
     else {
         const lefts = {
             d: leftDays,

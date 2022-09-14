@@ -1,16 +1,13 @@
-import MovieSide from "Components/moviebank/MovieSide";
-import SiteMap from "Components/SiteMap";
 import MovieSection from "Components/moviebank/MovieSection";
+import MainLayout from "layout/MainLayout";
 
 const MovieBank = () => {
-    return <main id="movie-bank">
-        <MovieSide />
+    return <MainLayout id="movie-bank" cn="p-main">
         <div className="right">
             <MovieSection />
         </div>
         <div className='prevent'></div>
-        <SiteMap />
-    </main>
+    </MainLayout>
 }
 
 export default MovieBank;

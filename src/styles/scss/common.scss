@@ -161,3 +161,24 @@
         margin: auto;
     }
 }
+
+@media (max-width : 1280px) {
+    .App {
+        min-width: 960px;
+        min-height: 640px;
+    }
+}
+
+@media (max-width : 960px) {
+    .App {
+        min-width: 720px;
+        min-height: 480px;
+    }
+}
+
+@media (max-width : 720px) {
+    .App {
+        min-width: 480px;
+        min-height: 360px;
+    }
+}
