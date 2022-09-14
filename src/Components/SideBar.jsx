@@ -15,14 +15,14 @@ const SideBar = () => {
             <h2>프론트엔드 개발자</h2>
         </div>
         <ul className="nav-list">
-            <li className={pathname === "/" ? "active" : ""}>
-                <Link to="/"><FaRegUserCircle /><span>소개</span></Link>
+            <li className={pathname === "/resume" ? "active" : ""}>
+                <Link to="/resume"><FaRegUserCircle /><span>소개</span></Link>
             </li>
-            <li className={pathname === "/skills" ? "active" : ""}>
-                <Link to="/skills"><FaTools /><span>기술</span></Link>
+            <li className={pathname === "/resume/skills" ? "active" : ""}>
+                <Link to="/resume/skills"><FaTools /><span>기술</span></Link>
             </li>
-            <li className={pathname === "/portfolio" ? "active" : ""}>
-                <Link to="/portfolio"><FaLaptop /><span>포트폴리오</span></Link>
+            <li className={pathname === "/resume/portfolio" ? "active" : ""}>
+                <Link to="/resume/portfolio"><FaLaptop /><span>포트폴리오</span></Link>
             </li>
         </ul>
         <div></div>
