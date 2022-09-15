@@ -9,24 +9,24 @@ const SiteMap = () => {
     return <nav className="site-map">
         <ul>
             <li>
-                <Link to="/"><FaHome /></Link>
+                <Link to="/resume"><FaHome /></Link>
                 <p className="down">홈으로 가기</p>
             </li>
             {
-                pathname !== "/d-day-counter" && <li>
-                    <Link to="/d-day-counter"><div>DD</div></Link>
+                pathname !== "/resume/d-day-counter" && <li>
+                    <Link to="/resume/d-day-counter"><div>DD</div></Link>
                     <p>d-day<br />포폴로 가기</p>
                 </li>
             }
             {
-                pathname !== "/todo-list" && <li>
-                    <Link to="/todo-list"><div>TL</div></Link>
+                pathname !== "/resume/todo-list" && <li>
+                    <Link to="/resume/todo-list"><div>TL</div></Link>
                     <p>todo-list<br />포폴로 가기</p>
                 </li>
             }
             {
-                pathname !== "/movie-bank" && <li>
-                    <Link to="/movie-bank"><div>MV</div></Link>
+                pathname !== "/resume/movie-bank" && <li>
+                    <Link to="/resume/movie-bank"><div>MV</div></Link>
                     <p>movie-bank<br />포폴로 가기</p>
                 </li>
             }
